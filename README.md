@@ -1,0 +1,1 @@
+# shoplogistic-widget
