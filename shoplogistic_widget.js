@@ -1,19 +1,18 @@
 function getDeliveries() {
     sendRequest(function () {
 
-            var content = $('#shoplogistic_widget');
-
-            if (this.readyState === 4 && this.status === 200) {
-                content.append(
-                    "<xmp>" +
-                    this.responseText +
-                    "</xmp>"
-                );
-            } else if (this.readyState === 4) {
-                content.append(
-                    "Ошибка загрузки данных виджетом:<br/>" +
-                    this.readyState + ' : ' + this.status + ' : ' + this.responseText
-                );
+            if (this.readyState === 4) {
+                if (this.status === 200) {
+                    $('#shoplogistic_widget').append(
+                        "<xmp>" +
+                        this.responseText +
+                        "</xmp>"
+                    );
+                } else {
+                    console.log('Ошибка загрузки данных виджетом shoplogistic: ' +
+                        this.readyState + ': ' + this.status + ': ' + this.responseText
+                    );
+                }
             }
         },
         //'http://client-shop-logistics.ru/index.php?route=deliveries/api'
@@ -21,7 +20,7 @@ function getDeliveries() {
     );
 }
 
-function sendRequest(callback, url) {
+function sendRequest(requestCallback, url) {
     var xhr;
     var method = 'POST';
     var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
@@ -31,7 +30,7 @@ function sendRequest(callback, url) {
     } else {
         xhr = new ActiveXObject('Microsoft.XMLHTTP'); // code for old IE browsers
     }
-    xhr.onreadystatechange = callback;
+    xhr.onreadystatechange = requestCallback;
     if ('withCredentials' in xhr) {
         xhr.open(method, url, true); // Chrome/Firefox/Opera/Safari.
     } else if (typeof XDomainRequest !== 'undefined') {
@@ -48,7 +47,7 @@ function sendRequest(callback, url) {
                 '<function>get_deliveries_tarifs</function>' +
                 '<api_id>' + apiKey + '</api_id>' +
                 '<from_city>405065</from_city>' +
-                '<to_city>Калининград</to_city>' +
+                '<to_city>Балтийск, Калининградская обл.</to_city>' +
                 '<weight>1</weight>' +
                 '<order_length></order_length>' +
                 '<order_width></order_width>' +

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<answer>
+    <error>0</error>
+    <tarifs>
+        <tarif>
+            <price>810</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>6-10</srok_dostavki>
+            <pickup_place>ПВЗ: Ростелеком: Балтийск</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Ленина пр-т, д. 61</address>
+            <proezd_info>Пункт выдачи заказов расположен в помещении центра продаж и обслуживания Ростелеком. От
+                остановки ТЦ Вестер повернуть налево и пройти 100 м. Пункт выдачи заказов находится в офисе Ростелеком
+                Войти в здание через центральный вход. Пункт выдачи заказов расположен на первом этаже в помещении
+                центра продаж и обслуживания Ростелеком.
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 09:00-18:00/13:00-14:00 Вт: 09:00-18:00/13:00-14:00 Ср: 09:00-18:00/13:00-14:00 Чт:
+                09:00-18:00/13:00-14:00 Пт: 09:00-18:00/13:00-14:00 Сб: Не работает Вс: Не работает
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Балтийск, Калининградская обл.</to_city_code>
+            <pickup_place_code>375149</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.653683</latitude>
+            <longitude>19.909937</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Балтийск (6134493501000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., Балтийский р-н, г. Балтийск, Ленина просп., д. 65</address>
+            <proezd_info>Магазин DVD Home.</proezd_info>
+            <phone>(4012) 387-533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Балтийск, Калининградская обл.</to_city_code>
+            <pickup_place_code>736810</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.654209</latitude>
+            <longitude>19.910269</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Балтийск (6295877986000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., Балтийский р-н, г. Балтийск, ул. В.Егорова, д. 10</address>
+            <proezd_info>ТЦ SPAR , павильон Хоббит</proezd_info>
+            <phone>(4012) 387-533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Балтийск, Калининградская обл.</to_city_code>
+            <pickup_place_code>493681</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.660662</latitude>
+            <longitude>19.911248</longitude>
+        </tarif>
+    </tarifs>
+</answer>
