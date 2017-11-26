@@ -1,13 +1,55 @@
 function getDeliveries() {
+
+    var tarifs = findTarifs();
+    var html = '';
+
+    for (var i = 0; i < tarifs.length; i++) {
+        var tarif = tarifs[i];
+
+        html += "<div>" + tarif.pickup_place + "</div>";
+    }
+
+    $('#shoplogistic_widget').append(html);
+}
+
+function findTarifs() {
+    var tarifs = [];
+    precessResponse(function (responseXml) {
+
+        $($.parseXML(responseXml)).find('answer>tarifs>tarif').each(function () {
+            var $tarif = $(this);
+            tarifs.push({
+                price: $tarif.find('price').text(), // цена
+                tarifs_type: $tarif.find('tarifs_type').text(), // Тип тарифа 1- курьерская, 2 - ПВЗ
+                srok_dostavki: $tarif.find('srok_dostavki').text(),//
+                pickup_place: $tarif.find('pickup_place').text(),//Название ПВЗ
+                pickup_places_type_name: $tarif.find('pickup_places_type_name').text(),//
+                address: $tarif.find('address').text(),//
+                proezd_info: $tarif.find('proezd_info').text(),//
+                phone: $tarif.find('phone').text(),//
+                worktime: $tarif.find('worktime').text(),//
+                comission_percent: $tarif.find('comission_percent').text(),//
+                is_terminal: $tarif.find('is_terminal').text(),//
+                to_city_code: $tarif.find('to_city_code').text(),//
+                pickup_place_code: $tarif.find('pickup_place_code').text(),//
+                delivery_partner: $tarif.find('delivery_partner').text(),//
+                partner: $tarif.find('partner').text(),//
+                is_basic: $tarif.find('is_basic').text(),//
+                obl_km_pay: $tarif.find('obl_km_pay').text(),//
+                latitude: $tarif.find('latitude').text(),//
+                longitude: $tarif.find('longitude').text()//
+            });
+        });
+    });
+    return tarifs;
+}
+
+function precessResponse(responseCallback) {
     sendRequest(function () {
 
             if (this.readyState === 4) {
                 if (this.status === 200) {
-                    $('#shoplogistic_widget').append(
-                        "<xmp>" +
-                        this.responseText +
-                        "</xmp>"
-                    );
+                    responseCallback(this.responseText);
                 } else {
                     console.log('Ошибка загрузки данных виджетом shoplogistic: ' +
                         this.readyState + ': ' + this.status + ': ' + this.responseText
@@ -15,39 +57,31 @@ function getDeliveries() {
                 }
             }
         },
-        //'http://client-shop-logistics.ru/index.php?route=deliveries/api'
-        'https://test.client-shop-logistics.ru/index.php?route=deliveries/api' // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>
+        //'http://client-shop-logistics.ru/index.php?route=deliveries/api',
+        'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>
+        'Балтийск, Калининградская обл.'
     );
 }
 
-function sendRequest(requestCallback, url) {
-    var xhr;
-    var method = 'POST';
+function sendRequest(requestCallback,
+                     url,
+                     to_city) {
     var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
 
-    if (window.XMLHttpRequest) {
-        xhr = new XMLHttpRequest();
-    } else {
-        xhr = new ActiveXObject('Microsoft.XMLHTTP'); // code for old IE browsers
-    }
-    xhr.onreadystatechange = requestCallback;
-    if ('withCredentials' in xhr) {
-        xhr.open(method, url, true); // Chrome/Firefox/Opera/Safari.
-    } else if (typeof XDomainRequest !== 'undefined') {
-        xhr = new XDomainRequest();  //IE
-        xhr.open(method, url);
-    } else {
-        xhr.open(method, url);
-    }
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send('xml=' +
+    $.ajax({
+        url: url,
+        method: 'POST',
+        accepts: {
+            "Content-type": "application/x-www-form-urlencoded"
+        },
+        context: 'xml=' +
         encodeURIComponent(
             Base64.encode(
                 '<request>' +
                 '<function>get_deliveries_tarifs</function>' +
                 '<api_id>' + apiKey + '</api_id>' +
                 '<from_city>405065</from_city>' +
-                '<to_city>Балтийск, Калининградская обл.</to_city>' +
+                '<to_city>' + to_city + '</to_city>' +
                 '<weight>1</weight>' +
                 '<order_length></order_length>' +
                 '<order_width></order_width>' +
@@ -58,7 +92,11 @@ function sendRequest(requestCallback, url) {
                 '</request>'
             )
         )
-    );
+    }).done(function (data, textStatus, jqXHR) {
+        requestCallback(data)
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+
+    });
 }
 
 var Base64 = {
@@ -87,6 +125,27 @@ var Base64 = {
         }
         return output;
     },
+    _utf8_encode: function (string) {
+        string = string.replace(/\r\n/g, "\n");
+        var utftext = "";
+
+        for (var n = 0; n < string.length; n++) {
+            var c = string.charCodeAt(n);
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+        }
+        return utftext;
+    },
     decode: function (input) {
         var output = "";
         var chr1, chr2, chr3;
@@ -112,27 +171,6 @@ var Base64 = {
         output = Base64._utf8_decode(output);
         return output;
 
-    },
-    _utf8_encode: function (string) {
-        string = string.replace(/\r\n/g, "\n");
-        var utftext = "";
-
-        for (var n = 0; n < string.length; n++) {
-            var c = string.charCodeAt(n);
-            if (c < 128) {
-                utftext += String.fromCharCode(c);
-            }
-            else if ((c > 127) && (c < 2048)) {
-                utftext += String.fromCharCode((c >> 6) | 192);
-                utftext += String.fromCharCode((c & 63) | 128);
-            }
-            else {
-                utftext += String.fromCharCode((c >> 12) | 224);
-                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-                utftext += String.fromCharCode((c & 63) | 128);
-            }
-        }
-        return utftext;
     },
     _utf8_decode: function (utftext) {
         var string = "";
