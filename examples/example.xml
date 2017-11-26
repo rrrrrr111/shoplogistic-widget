@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<answer>
+    <error>0</error>
+    <tarifs>
+        <tarif>
+            <price>720</price>
+            <tarifs_type>1</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place></pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address></address>
+            <proezd_info></proezd_info>
+            <phone></phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal></is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code></pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude></latitude>
+            <longitude></longitude>
+        </tarif>
+        <tarif>
+            <price>420</price>
+            <tarifs_type>1</tarifs_type>
+            <srok_dostavki>6-11</srok_dostavki>
+            <pickup_place></pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address></address>
+            <proezd_info></proezd_info>
+            <phone></phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal></is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code></pickup_place_code>
+            <delivery_partner>MOS000007</delivery_partner>
+            <partner>СДЭК</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude></latitude>
+            <longitude></longitude>
+        </tarif>
+        <tarif>
+            <price>670</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place>ПВЗ: Про-Сервис: Калининград</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Мусоргского ул., д. 10</address>
+            <proezd_info>Пункт выдачи заказов находится в сервисном центре Про-Сервис. Ориентир: рядом завод Кварц, ТЦ
+                Мега-Сити. Транспортом: троллейбус1, автобус №10, 23, 27, 4, трамвай №3, 5, маршрутное такси №68, 73,
+                79, 84 до ост. ул. Кирова; автобус № 27, 10, 23, маршрутное такси № 71 до ост. Южный вокзал, трамвай № 5
+                до ост. Площадь, трамвай № 5, маршрутное такси № 68 до ост. пл. Василевского. Идти к заводу Кварц,
+                пройти его проходную, Советскую столовую, далее в зоне видимости СЦ Про-Сервис. Здание находится
+                непосредственно на улиц Мусоргского. 2-х этажная пристройка к проходной завода кварц. Слева от проходной
+                - 50-70 метров. Рядом магазин Картинки с Выставки, Клуб Кури бамбук, через дорогу - поликлиника в
+                9-этажном здании из красного кирпича. (одно на улице Мусоргского) Войти в сервисный центр через основной
+                вход, над дверью вывески Про-Сервис, Пункт выдачи заказов PickPoint
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 09:00-20:00 Вт: 09:00-20:00 Ср: 09:00-20:00 Чт: 09:00-20:00 Пт: 09:00-20:00 Сб: 10:00-18:00
+                Вс: 10:00-18:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>907215</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.726834</latitude>
+            <longitude>20.501935</longitude>
+        </tarif>
+        <tarif>
+            <price>670</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place>ПВЗ: Ростелеком: Калининград</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Ленинский пр-кт, д. 32</address>
+            <proezd_info>Пункт выдачи заказов расположен в помещении центра продаж и обслуживания Ростелеком.
+                Транспортом: из центра любым видом транспорта до ост. Плаза, троллейбус №2, автобус №49, маршрутное
+                такси №75, 77, 80, 87, 93 до ост. СК Юность Войти в здание с вывеской Ростелеком через центральный вход.
+                Пункт выдачи заказов расположен в отдельном помещении на первом этаже
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 08:00-21:00 Вт: 08:00-21:00 Ср: 08:00-21:00 Чт: 08:00-21:00 Пт: 08:00-21:00 Сб: 08:00-21:00
+                Вс: 08:00-21:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>535562</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.710412</latitude>
+            <longitude>20.507747</longitude>
+        </tarif>
+        <tarif>
+            <price>670</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place>Постамат: ТРЦ Европа</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Театральная ул., д.30</address>
+            <proezd_info>Постамат расположен в ТРЦ Европа. Транспортом: автобус №24, 36, 5, троллейбус 6, маршрутное
+                такси № 72, 89 до ост. ТЦ Маяк; троллейбус №1, 6, 7, автобус № 1, 10, 11, 12, 14, 17, 18, 19, 21, 23,
+                24, 27, 3, 30, 37, 44, 7, 9, маршрутное такси № 63, 66, 67, 69, 70, 71, 83, 85, 88 до ост. Ленинский
+                проспект Войти в торговый центр, пройти в зал атриум Лондон, спуститься на эскалаторе на нулевой этаж,
+                выйти на подземную парковку, справа в зоне видимости расположен Постамат PickPoint
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 10:00-21:00 Вт: 10:00-21:00 Ср: 10:00-21:00 Чт: 10:00-21:00 Пт: 10:00-21:00 Сб: 10:00-21:00
+                Вс: 10:00-21:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>907013</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.718078</latitude>
+            <longitude>20.500255</longitude>
+        </tarif>
+        <tarif>
+            <price>670</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Две Пятерки</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Горького ул., д. 55</address>
+            <proezd_info>Постамат находится в ТЦ Две Пятерки. Транспортом: маршрутное такси № 81, 67 ,75, автобус № 38,
+                1, 7, 30, троллейбус № 6, 7 до ост. Детская больница. От остановки перейти дорогу, пройти в обратную
+                сторону от движения 200 метров к ТЦ Две Пятерки Центральный вход, прямо по лестнице подняться на 3 этаж,
+                справа постамат
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 09:00-20:00 Вт: 09:00-20:00 Ср: 09:00-20:00 Чт: 09:00-20:00 Пт: 09:00-20:00 Сб: 09:00-20:00
+                Вс: 09:00-20:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>682754</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.727656</latitude>
+            <longitude>20.508682</longitude>
+        </tarif>
+        <tarif>
+            <price>670</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Светлана</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Батальный пер., д. 4</address>
+            <proezd_info>Постамат находится в ТЦ Светлана. Транспортом: автобус № 16, 37, 36, 17, 7, 8, троллейбус № 5,
+                маршрутное такси № 86, 71, 63, 90, 73, 89, 77, 84 до ост. ул. Щедина. Перейти улицу, пройти 70 м. до ТЦ
+                вглубь жилого района Войти в торговый центр через центральный вход, пройти прямо в фойе, где справа
+                расположен Постамат
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 09:00-22:00 Вт: 09:00-22:00 Ср: 09:00-22:00 Чт: 09:00-22:00 Пт: 09:00-22:00 Сб: 09:00-22:00
+                Вс: 09:00-22:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>326726</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.676178</latitude>
+            <longitude>20.501298</longitude>
+        </tarif>
+        <tarif>
+            <price>670</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Сити</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Московский пр-кт, д. 171 А</address>
+            <proezd_info>Постамат находится в ТЦ Сити. Транспортом: маршрутное такси № 74, 75 ,78, автобус № 28, 37,
+                троллейбус № 2, 7 до ост. ул. Ялтинская. Перейти дорогу к ТЦ Сити Вариант 1: Центральный вход, до
+                эскалатора вниз слева, спуститься на нулевой этаж, прямо к выходу на парковку, Постамат спарава от
+                выхода, напротив касс супермаркета. Вариант 2: Зайти с крытой парковки цокольного этажа, после входа
+                сразу слева Постамат
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 08:00-23:00 Вт: 08:00-23:00 Ср: 08:00-23:00 Чт: 08:00-23:00 Пт: 08:00-23:00 Сб: 08:00-23:00
+                Вс: 08:00-23:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>541819</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.710682</latitude>
+            <longitude>20.543051</longitude>
+        </tarif>
+        <tarif>
+            <price>300</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-8</srok_dostavki>
+            <pickup_place>Калининград (На 1812 года)</pickup_place>
+            <pickup_places_type_name>Д</pickup_places_type_name>
+            <address>УЛ. 1812 ГОДА, 126</address>
+            <proezd_info></proezd_info>
+            <phone>74012375382</phone>
+            <worktime>пн-пт 10:00-19:00, сб 10:00-16:00</worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>210547</pickup_place_code>
+            <delivery_partner>MOS000007</delivery_partner>
+            <partner>СДЭК</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.711411</latitude>
+            <longitude>20.536772</longitude>
+        </tarif>
+        <tarif>
+            <price>300</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>5-8</srok_dostavki>
+            <pickup_place>Калининград (На Озерной)</pickup_place>
+            <pickup_places_type_name>Д</pickup_places_type_name>
+            <address>ОЗЕРНАЯ, 41А</address>
+            <proezd_info></proezd_info>
+            <phone>74012921031, 74012777272</phone>
+            <worktime>пн-пт 09:00-19:00, сб 10:00-16:00</worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>121831</pickup_place_code>
+            <delivery_partner>MOS000007</delivery_partner>
+            <partner>СДЭК</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.741712</latitude>
+            <longitude>20.512122</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138272513000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Артиллерийская, д. 22</address>
+            <proezd_info>Магазин Хоббит в ТЦ Виктория.</proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>680532</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.731893</latitude>
+            <longitude>20.540823</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138308047000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Батальная, д. 62а</address>
+            <proezd_info>Ориентир Седьмой Континент , который расположен напротив автобусной остановки. Пункт выдачи
+                находится в павильоне Хоббит DVD Home, вывеска Хоббит. Как проехать: Остановка общественного транспорта
+                ул. Щедина Автобус: 5,7,17,36,37. Маршрутное такси: 63,89,84,71
+            </proezd_info>
+            <phone>+7 909 789-41-10</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>736476</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.674736</latitude>
+            <longitude>20.499968</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138324541000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Горького, д. 195</address>
+            <proezd_info>Мини-рынок Павильон Хоббит Как проехать: Остановка общественного транспорта Зеленая Автобус: 1,
+                4, 7, 10, 23, 30, 38, 45, 48. Маршрутное такси: 67, 82, 81, 80,84, 88. Троллейбус: 7, 6.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime>Понедельник-воскресенье с 10.00 до 20.00. Перерыв на обед с 13.00 до 13.45</worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>772228</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.739461</latitude>
+            <longitude>20.504801</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138373847000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Киевская, д. 80</address>
+            <proezd_info>Магазин DVD Home, слева от входа на Балтийский рынок. Как проехать: Остановка общественного
+                транспорта Балтийский рынок Автобус: 11,10,21,19. Маршрутное такси:69,72,80.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>896556</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.681831</latitude>
+            <longitude>20.474591</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138401317000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Куйбышева, д. 91а</address>
+            <proezd_info>ТЦ Квартал, после касс первый павильон с левой стороны, магазин Хоббит . Как проехать:
+                Остановка общественного транспорта ул. Куйбышева . Автобус № 11 и маршрутка № 69.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime>Понедельник-воскресенье с 10.00 до 20.00. Перерыв на обед с 13.00 до 13.45</worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>380171</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.726247</latitude>
+            <longitude>20.536628</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138425014000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, Победы просп., д. 137</address>
+            <proezd_info>Магазин DVD Home. Как проехать: Остановка общественного транспорта ул. Красносельская Автобус:
+                5, 9, 14, 24, 105, 107. Маршрутное такси: 93, 89, 61, 74, 79.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>600588</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.709991</latitude>
+            <longitude>20.442763</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138440534000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, Победы пл., д. 4</address>
+            <proezd_info>Напротив пассажа в полуподвальном помещении Как проехать: Остановка общественного транспорта
+                Площадь Победы Автобус: 11,19,21,28,32,35,37,44.45. Маршрутное такси: 66,68,69,73,74,76,78.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime>Понедельник-воскресенье с 10.00 до 20.00</worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>964963</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.72086</latitude>
+            <longitude>20.499734</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6138474623000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Черняховского, д. 14</address>
+            <proezd_info>5-ти этажное здание, 1 этаж, Магазин ММЦ Пирамида .</proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>898782</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.719378</latitude>
+            <longitude>20.505834</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6175644640000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Красная, д. 142</address>
+            <proezd_info>ТЦ Виктория . Магазин Хоббит напротив касс. Как проехать: Остановка общественного транспорта
+                ул. Красная Автобус: 21,27,36,68,78.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>132346</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.737855</latitude>
+            <longitude>20.474204</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6190543904000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Генерала Челнокова, д. 11</address>
+            <proezd_info>Магазин DVD Home. Как проехать: Остановка общественного транспорта Рынок Сельма Автобус: 45,
+                48. Маршрутное такси:75, 79, 80.
+            </proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>980926</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.738016</latitude>
+            <longitude>20.486134</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6190847677000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Согласия, д. 44</address>
+            <proezd_info>Магазин Хоббит . Павильон в ТЦ Виктория</proezd_info>
+            <phone>(4012) 387-533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>413871</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.749803</latitude>
+            <longitude>20.488137</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (6412603567000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, Балтийское ш., д. 114</address>
+            <proezd_info>Павильон Хоббит в ТЦ SPAR</proezd_info>
+            <phone>(4012) 387533</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>774437</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.715238</latitude>
+            <longitude>20.37265</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (67952230000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, Мира просп., д. 5</address>
+            <proezd_info>Офис 14, цокольный этаж.</proezd_info>
+            <phone>89062146991</phone>
+            <worktime>Понедельник - пятница: с 10.00 до 20.00. Суббота: с 11.00 до 17.00. Воскресенье - выходной
+            </worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>576097</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.71957</latitude>
+            <longitude>20.496456</longitude>
+        </tarif>
+        <tarif>
+            <price>620</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>11</srok_dostavki>
+            <pickup_place>Калининград (7832199949000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Калининградская обл., г. Калининград, ул. Октябрьская, д. 3А</address>
+            <proezd_info>Автобус: 40,46,47,49 Троллейбус: 2,7 Маршрутное такси: 72,75,87,93 ПВЗ Расположен в
+                Калининградском выставочном центре , напротив супермаркета Виктория
+            </proezd_info>
+            <phone>8 4012 34 10 95</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Калининград</to_city_code>
+            <pickup_place_code>523413</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>54.705928</latitude>
+            <longitude>20.516488</longitude>
+        </tarif>
+    </tarifs>
+</answer>

@@ -1,10 +1,19 @@
 function getDeliveries() {
     sendRequest(function () {
 
-            var stateElement = document.getElementById('shoplogistic_widget_state');
-            stateElement.innerHTML = (this.readyState + ' : ' + this.status + ' : ' + this.responseText);
-            if (this.readyState === 4 && this.status === 200) {
+            var content = $('#shoplogistic_widget');
 
+            if (this.readyState === 4 && this.status === 200) {
+                content.append(
+                    "<xmp>" +
+                    this.responseText +
+                    "</xmp>"
+                );
+            } else if (this.readyState === 4) {
+                content.append(
+                    "Ошибка загрузки данных виджетом:<br/>" +
+                    this.readyState + ' : ' + this.status + ' : ' + this.responseText
+                );
             }
         },
         //'http://client-shop-logistics.ru/index.php?route=deliveries/api'
