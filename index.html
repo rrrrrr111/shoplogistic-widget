@@ -5,9 +5,82 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="shoplogistic_widget.js"></script>
 </head>
-<body onload="getDeliveries()">
+<body onload="startCalculationButtonObserver()">
 
 <h1>Виджет Shop Logistic</h1>
-<div id="shoplogistic_widget" class="content"></div>
+<!--<div id="shoplogistic_widget" class="content"></div>-->
+
+
+<div class="option-type active-type">
+    <label class="option-label">
+        <div class="jq-radio checked" unselectable="on"
+             style="user-select: none; display: inline-block; position: relative;">
+            <input name="delivery_id"
+                   type="radio"
+                   autocomplete="off"
+                   value="725641"
+                   style="position: absolute; z-index: -1; opacity: 0; margin: 0px; padding: 0px;">
+            <div class="jq-radio__div"></div>
+        </div>
+        <span>Выбор из всех способов доставки возможных по Вашему городу</span>
+    </label>
+    <div class="option-details">
+        <div class="option-item">
+            <label>
+                <span>Куда <span class="required">*</span></span>
+
+                <select id="shop2-edost2-region" name="725641[_region]" data-value="">
+                    <option value="default">--Регионы--</option>
+                    <option value="1019">Москва</option>
+                    <option value="1020">Санкт-Петербург</option>
+                    <option value="2220">Алтайский край</option>
+                    <option value="2226">Амурская область</option>
+                    <option value="2227">Архангельская область</option>
+                    <option value="2228">Астраханская область</option>
+                    <option value="2229">Белгородская область</option>
+                    <option value="2230">Брянская область</option>
+                </select>
+            </label>
+        </div>
+        <div class="option-item">
+            <label>
+                <select id="shop2-edost2-city" name="725641[_city]" data-value="">
+                    <option value="default">--Город--</option>
+                    <option value="1001">Белогорск</option>
+                    <option value="1000">Благовещенск (Амурская область)</option>
+                    <option value="1007">Завитинск</option>
+                    <option value="1002">Зея</option>
+                    <option value="1003">Райчихинск</option>
+                    <option value="1004">Свободный</option>
+                    <option value="1005">Тында</option>
+                    <option value="1006">Шимановск</option>
+                </select>
+            </label>
+        </div>
+        <input type="hidden" id="shop2-edost2-to" name="725641[to]" value="1002">
+        <label>
+            <a class="shop2-btn" href="#" data-attach-id="725641" id="shop2-edost-calc">Рассчитать</a>
+        </label>
+        <div class="option-item">
+            <label>
+                <span>Адрес доставки <span class="required">*</span></span>
+                <textarea name="725641[address]" cols="50" rows="5"></textarea>
+            </label>
+        </div>
+        <div class="option-item">
+            <label>
+                <span>Телефон <span class="required">*</span></span>
+                <input name="725641[phone]" type="text" size="30" maxlength="100" value="">
+            </label>
+        </div>
+        <div class="option-item">
+            <label>
+                <span>Почтовый индекс </span>
+                <input name="725641[zip]" type="text" size="30" maxlength="100" value="">
+            </label>
+        </div>
+        <div id="delivery-725641-html"></div>
+    </div>
+</div>
 </body>
 </html>

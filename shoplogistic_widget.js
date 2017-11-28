@@ -1,19 +1,34 @@
-function getDeliveries() {
-    findTarifs(
-        'Балтийск, Калининградская обл.',
-        function (tarifs) {
+function startCalculationButtonObserver() {
 
-            var html = '<div>';
+    setInterval(function () {
+        if (!$('a#shop2-edost-calc')) {
+            return
+        }
+        showWidget(
+            'Балтийск, Калининградская обл.',
+            $('div#delivery-725641-html'));
+    }, 3000);
+}
 
-            for (var i = 0; i < tarifs.length; i++) {
-                var tarif = tarifs[i];
-                html += "<div>" + tarif.pickup_place + "</div>";
-            }
+// for example 'Балтийск, Калининградская обл.'
+function showWidget(to_city, container) {
 
-            html += "</div>";
+    if (container === null
+        || container.html() !== '') {
+        return;
+    }
 
-            $('#shoplogistic_widget').append(html);
-        });
+    findTarifs(to_city, function (tarifs) {
+
+        var html = '<div style="display: none">';
+        for (var i = 0; i < tarifs.length; i++) {
+            var tarif = tarifs[i];
+            html += "<div>" + tarif.pickup_place + "</div>";
+        }
+        html += "</div>";
+
+        container.append(html);
+    });
 }
 
 function findTarifs(to_city, tarifsCallback) {
