@@ -1,61 +1,48 @@
 function getDeliveries() {
+    findTarifs(function (tarifs) {
 
-    var tarifs = findTarifs();
-    var html = '';
+        var html = '';
 
-    for (var i = 0; i < tarifs.length; i++) {
-        var tarif = tarifs[i];
+        for (var i = 0; i < tarifs.length; i++) {
+            var tarif = tarifs[i];
 
-        html += "<div>" + tarif.pickup_place + "</div>";
-    }
+            html += "<div>" + tarif.pickup_place + "</div>";
+        }
 
-    $('#shoplogistic_widget').append(html);
-}
-
-function findTarifs() {
-    var tarifs = [];
-    precessResponse(function (responseXml) {
-
-        $($.parseXML(responseXml)).find('answer>tarifs>tarif').each(function () {
-            var $tarif = $(this);
-            tarifs.push({
-                price: $tarif.find('price').text(), // цена
-                tarifs_type: $tarif.find('tarifs_type').text(), // Тип тарифа 1- курьерская, 2 - ПВЗ
-                srok_dostavki: $tarif.find('srok_dostavki').text(),//
-                pickup_place: $tarif.find('pickup_place').text(),//Название ПВЗ
-                pickup_places_type_name: $tarif.find('pickup_places_type_name').text(),//
-                address: $tarif.find('address').text(),//
-                proezd_info: $tarif.find('proezd_info').text(),//
-                phone: $tarif.find('phone').text(),//
-                worktime: $tarif.find('worktime').text(),//
-                comission_percent: $tarif.find('comission_percent').text(),//
-                is_terminal: $tarif.find('is_terminal').text(),//
-                to_city_code: $tarif.find('to_city_code').text(),//
-                pickup_place_code: $tarif.find('pickup_place_code').text(),//
-                delivery_partner: $tarif.find('delivery_partner').text(),//
-                partner: $tarif.find('partner').text(),//
-                is_basic: $tarif.find('is_basic').text(),//
-                obl_km_pay: $tarif.find('obl_km_pay').text(),//
-                latitude: $tarif.find('latitude').text(),//
-                longitude: $tarif.find('longitude').text()//
-            });
-        });
+        $('#shoplogistic_widget').append(html);
     });
-    return tarifs;
 }
 
-function precessResponse(responseCallback) {
-    sendRequest(function () {
+function findTarifs(tarifsCallback) {
+    sendRequest(function (responseXml) {
 
-            if (this.readyState === 4) {
-                if (this.status === 200) {
-                    responseCallback(this.responseText);
-                } else {
-                    console.log('Ошибка загрузки данных виджетом shoplogistic: ' +
-                        this.readyState + ': ' + this.status + ': ' + this.responseText
-                    );
-                }
-            }
+            var tarifs = [];
+            $($.parseXML(responseXml)).find('answer>tarifs>tarif').each(function () {
+                var $tarif = $(this);
+
+                tarifs.push({
+                    price: $tarif.find('price').text(), // цена
+                    tarifs_type: $tarif.find('tarifs_type').text(), // Тип тарифа 1- курьерская, 2 - ПВЗ
+                    srok_dostavki: $tarif.find('srok_dostavki').text(),//
+                    pickup_place: $tarif.find('pickup_place').text(),//Название ПВЗ
+                    pickup_places_type_name: $tarif.find('pickup_places_type_name').text(),//
+                    address: $tarif.find('address').text(),//
+                    proezd_info: $tarif.find('proezd_info').text(),//
+                    phone: $tarif.find('phone').text(),//
+                    worktime: $tarif.find('worktime').text(),//
+                    comission_percent: $tarif.find('comission_percent').text(),//
+                    is_terminal: $tarif.find('is_terminal').text(),//
+                    to_city_code: $tarif.find('to_city_code').text(),//
+                    pickup_place_code: $tarif.find('pickup_place_code').text(),//
+                    delivery_partner: $tarif.find('delivery_partner').text(),//
+                    partner: $tarif.find('partner').text(),//
+                    is_basic: $tarif.find('is_basic').text(),//
+                    obl_km_pay: $tarif.find('obl_km_pay').text(),//
+                    latitude: $tarif.find('latitude').text(),//
+                    longitude: $tarif.find('longitude').text()//
+                });
+            });
+            tarifsCallback(tarifs);
         },
         //'http://client-shop-logistics.ru/index.php?route=deliveries/api',
         'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>
@@ -71,11 +58,7 @@ function sendRequest(requestCallback,
     $.ajax({
         url: url,
         method: 'POST',
-        accepts: {
-            "Content-type": "application/x-www-form-urlencoded"
-        },
-        context: 'xml=' +
-        encodeURIComponent(
+        data: 'xml=' + encodeURIComponent(
             Base64.encode(
                 '<request>' +
                 '<function>get_deliveries_tarifs</function>' +
@@ -92,10 +75,10 @@ function sendRequest(requestCallback,
                 '</request>'
             )
         )
-    }).done(function (data, textStatus, jqXHR) {
+    }).success(function (data, textStatus, jqXhr) {
         requestCallback(data)
-    }).fail(function (jqXHR, textStatus, errorThrown) {
-
+    }).fail(function (jqXhr, textStatus, errorThrown) {
+        console.log('Ошибка загрузки данных виджетом shoplogistic: ' + textStatus + ': ' + errorThrown);
     });
 }
 
