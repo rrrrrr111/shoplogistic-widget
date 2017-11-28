@@ -1,23 +1,34 @@
 function getDeliveries() {
-    findTarifs(function (tarifs) {
+    findTarifs(
+        'Балтийск, Калининградская обл.',
+        function (tarifs) {
 
-        var html = '';
+            var html = '<div>';
 
-        for (var i = 0; i < tarifs.length; i++) {
-            var tarif = tarifs[i];
+            for (var i = 0; i < tarifs.length; i++) {
+                var tarif = tarifs[i];
+                html += "<div>" + tarif.pickup_place + "</div>";
+            }
 
-            html += "<div>" + tarif.pickup_place + "</div>";
-        }
+            html += "</div>";
 
-        $('#shoplogistic_widget').append(html);
-    });
+            $('#shoplogistic_widget').append(html);
+        });
 }
 
-function findTarifs(tarifsCallback) {
+function findTarifs(to_city, tarifsCallback) {
     sendRequest(function (responseXml) {
 
+            if (responseXml === null || responseXml === undefined
+                || (typeof responseXml === 'string' && !responseXml.startsWith('<?xml'))) {
+
+                console.error('Error in responseXml on loading data by shoplogistic widget: ' + responseXml);
+                return [];
+            }
             var tarifs = [];
-            $($.parseXML(responseXml)).find('answer>tarifs>tarif').each(function () {
+            var $xml = $($.parseXML(responseXml));
+
+            $xml.find('answer>tarifs>tarif').each(function () {
                 var $tarif = $(this);
 
                 tarifs.push({
@@ -42,21 +53,26 @@ function findTarifs(tarifsCallback) {
                     longitude: $tarif.find('longitude').text()//
                 });
             });
+            if (tarifs.length === 0) {
+                var error = $xml.find('answer>error').text();
+                if (error !== '0') {
+                    console.error('Error in answer on loading data by shoplogistic widget: ' + error);
+                }
+            }
             tarifsCallback(tarifs);
         },
-        //'http://client-shop-logistics.ru/index.php?route=deliveries/api',
-        'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>
-        'Балтийск, Калининградская обл.'
+        to_city
     );
 }
 
 function sendRequest(requestCallback,
-                     url,
                      to_city) {
     var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
+    var price = '1000.00';
 
     $.ajax({
-        url: url,
+        //url: 'http://client-shop-logistics.ru/index.php?route=deliveries/api',
+        url: 'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>,
         method: 'POST',
         data: 'xml=' + encodeURIComponent(
             Base64.encode(
@@ -69,8 +85,8 @@ function sendRequest(requestCallback,
                 '<order_length></order_length>' +
                 '<order_width></order_width>' +
                 '<order_height></order_height>' +
-                '<order_price>1000.00</order_price>' +
-                '<ocen_price>1000.00</ocen_price>' +
+                '<order_price>' + price + '</order_price>' +
+                '<ocen_price>' + price + '</ocen_price>' +
                 '<num>1</num>' +
                 '</request>'
             )
@@ -78,7 +94,7 @@ function sendRequest(requestCallback,
     }).success(function (data, textStatus, jqXhr) {
         requestCallback(data)
     }).fail(function (jqXhr, textStatus, errorThrown) {
-        console.log('Ошибка загрузки данных виджетом shoplogistic: ' + textStatus + ': ' + errorThrown);
+        console.error('Error in response on loading data by shoplogistic widget: ' + textStatus + ': ' + errorThrown);
     });
 }
 
