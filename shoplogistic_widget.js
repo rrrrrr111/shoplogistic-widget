@@ -1,4 +1,4 @@
-function startCalculationButtonObserver() {
+function shopLogisticWidgetStartCalculationButtonObserver() {
 
     setInterval(function () {
         if (!$('a#shop2-edost-calc')) {
@@ -14,7 +14,7 @@ function startCalculationButtonObserver() {
 function showWidget(to_city, container) {
 
     if (container === null
-        || container.html() !== '') {
+        || container.html().trim() !== '') {
         return;
     }
 
