@@ -20,16 +20,34 @@ var ShopLogisticWidget = {
                     return;
                 }
 
-                var price = '1000.00'; // цена товара
-                var fee = 70; // дополнительная комиссия добавляемая к сумме доставки
-                var weight = '1';
+                var price = '1000.00';  // ценность посылки
+                var fee = 70;           // дополнительная комиссия добавляемая к сумме доставки
+                var weight = '1';       // вес посылки
                 var toCity = ShopLogisticWidget.getToCity();  // место назначения
                 ShopLogisticWidget.showWidget(toCity, weight, price, fee, container);
             });
         }, 3000);
     },
     getToCity: function () {
-        return 'Балтийск, Калининградская обл.';
+        //return 'Балтийск, Калининградская обл.';
+        return 'Москва';
+    },
+    getPickUpPlace: function (tarif) {
+        return (tarif.tarifs_type === '1'
+                ? (tarif.pickup_place.indexOf('урьер') >= 0 ? tarif.pickup_place : 'Курьером ' + tarif.pickup_place)
+                : (tarif.pickup_place.indexOf('ПВЗ') >= 0 ? tarif.pickup_place.replace('ПВЗ', 'Пункт выдачи заказов') : ('Пункт выдачи заказов: ' + tarif.pickup_place))
+        );
+    },
+    getDeliveryPrice: function (tarif, fee) {
+        return (tarif.price + fee);
+    },
+    getAddressAndPhone: function (tarif) {
+        if (tarif.address === '') {
+            return tarif.phone
+        } else if (tarif.phone === '') {
+            return tarif.address
+        }
+        return tarif.address + ', ' + tarif.phone;
     },
 
     // for example 'Балтийск, Калининградская обл.'
@@ -47,12 +65,9 @@ var ShopLogisticWidget = {
                 html += '<div class="shop2-edost-variant shop-logistic-variant"><label>';
                 html += '<span style="float: left; width: 40px; min-height: 30px;"><div class="jq-radio" style="user-select: none; display: inline-block; position: relative;"><input type="radio" name="725641[edost][tarif]" value="2:0" style="position: absolute; z-index: -1; opacity: 0;"><div class="jq-radio__div"></div></div></span>';
 
-                html += (tarif.tarifs_type === '1'
-                            ? (tarif.pickup_place.indexOf('курьер') >= 0 ? tarif.pickup_place : 'Курьером ' + tarif.pickup_place)
-                            : (tarif.pickup_place.indexOf('ПВЗ') >= 0 ? tarif.pickup_place.replace('ПВЗ', 'Пункт выдачи заказов') : ('Пункт выдачи заказов: ' + tarif.pickup_place))
-                    ) +
-                    ' - <b>' + (tarif.price + fee) + '</b> руб.'
-                    + '<div style="font-size: 11px;">' + tarif.address + ', ' + tarif.phone + '</div>';
+                html += ShopLogisticWidget.getPickUpPlace(tarif) +
+                    ' - <b>' + ShopLogisticWidget.getDeliveryPrice(tarif, fee) + '</b> руб.'
+                    + '<br/><span style="font-size: 11px;">' + ShopLogisticWidget.getAddressAndPhone(tarif) + '</span>';
 
                 html += '</label></div>';
             }
