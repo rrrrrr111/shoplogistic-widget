@@ -1,22 +1,40 @@
+
+
+
 function shopLogisticWidgetStartCalculationButtonObserver() {
 
     setInterval(function () {
-        if (!$('a#shop2-edost-calc')) {
+        var $oldButton = $('a#shop2-edost-calc');
+        if (!$oldButton || !$oldButton.is(':visible')) {
             return
         }
-        showWidget(
-            'Балтийск, Калининградская обл.',
-            $('div#delivery-725641-html'));
+
+        $oldButton.hide();
+        $oldButton.parent().append(
+            '<a id="shoplogistic-calc-button" href="#" class="shop2-btn" style="color: #f75e82;">Рассчитать</a>');
+
+        var $newButton = $('a#shoplogistic-calc-button');
+        $newButton.on("click", function () {
+
+            var container = $('div#delivery-725641-html');
+            if (container === null || container === undefined) {
+                console.error('Deliveries container not found');
+                return;
+            }
+
+            var toCity = 'Балтийск, Калининградская обл.';
+            //var toCity = getToCity();
+            showWidget(toCity, container);
+        });
     }, 3000);
+}
+
+function getToCity() {
+
 }
 
 // for example 'Балтийск, Калининградская обл.'
 function showWidget(to_city, container) {
-
-    if (container === null
-        || container.html().trim() !== '') {
-        return;
-    }
 
     findTarifs(to_city, function (tarifs) {
 
@@ -27,7 +45,7 @@ function showWidget(to_city, container) {
         }
         html += "</div>";
 
-        container.append(html);
+        container.html(html);
     });
 }
 
