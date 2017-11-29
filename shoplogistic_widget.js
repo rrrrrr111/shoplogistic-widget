@@ -22,8 +22,9 @@ var ShopLogisticWidget = {
 
                 var price = '1000.00'; // цена товара
                 var fee = 70; // дополнительная комиссия добавляемая к сумме доставки
+                var weight = '1';
                 var toCity = ShopLogisticWidget.getToCity();  // место назначения
-                ShopLogisticWidget.showWidget(toCity, price, fee, container);
+                ShopLogisticWidget.showWidget(toCity, weight, price, fee, container);
             });
         }, 3000);
     },
@@ -32,9 +33,9 @@ var ShopLogisticWidget = {
     },
 
     // for example 'Балтийск, Калининградская обл.'
-    showWidget: function (to_city, price, fee, container) {
+    showWidget: function (to_city, weight, price, fee, container) {
 
-        this.findTarifs(to_city, price, function (tarifs) {
+        this.findTarifs(to_city, weight, price, function (tarifs) {
 
             var html = '<div style="display: block">';
             html += '<h2>Служба доставки</h2>'
@@ -61,7 +62,7 @@ var ShopLogisticWidget = {
         });
     },
 
-    findTarifs: function (to_city, price, tarifsCallback) {
+    findTarifs: function (to_city, weight, price, tarifsCallback) {
         this.sendRequest(function (responseXml) {
 
                 if (responseXml === null || responseXml === undefined
@@ -106,12 +107,13 @@ var ShopLogisticWidget = {
                 }
                 tarifsCallback(tarifs);
             },
-            to_city, price
+            to_city, weight, price
         );
     },
 
     sendRequest: function (requestCallback,
                            to_city,
+                           weight,
                            price) {
         var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
         $.ajax({
@@ -125,7 +127,7 @@ var ShopLogisticWidget = {
                     '<api_id>' + apiKey + '</api_id>' +
                     '<from_city>405065</from_city>' +
                     '<to_city>' + to_city + '</to_city>' +
-                    '<weight>1</weight>' +
+                    '<weight>' + weight + '</weight>' +
                     '<order_length></order_length>' +
                     '<order_width></order_width>' +
                     '<order_height></order_height>' +
