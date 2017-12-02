@@ -84,7 +84,7 @@ var ShopLogisticWidget = {
     // показ виджета
     showWidget: function (to_city, weight, price, fee, container) {
         if (to_city === '') {
-            var html = "<div class='slw-warn'>Укажите Ваш регион и город для расчета вариантов доставки</div>";
+            var html = "<div style='color: #f75e82; font-size: 14px;'>Укажите Ваш регион и город для расчета вариантов доставки</div>";
             container.html(html);
             return
         }
@@ -95,7 +95,7 @@ var ShopLogisticWidget = {
                 container.html(html);
                 ShopLogisticWidget.bindVariantsSelectionListeners(tarifs, fee);
             } else {
-                html = "<div class='slw-warn'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
+                html = "<div style='color: #f75e82; font-size: 14px;'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
                 container.html(html);
             }
         });
