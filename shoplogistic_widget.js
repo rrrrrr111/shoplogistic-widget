@@ -1,6 +1,8 @@
 var ShopLogisticWidget = {
     startCalculationButtonObserver: function () {
 
+        var interval = 1000; // todo вернуть 3000
+
         setInterval(function () {
             var $oldButton = $('a#shop2-edost-calc');
             if (!$oldButton || !$oldButton.is(':visible')) {
@@ -26,7 +28,7 @@ var ShopLogisticWidget = {
                 var toCity = ShopLogisticWidget.getToCity();  // место назначения
                 ShopLogisticWidget.showWidget(toCity, weight, price, fee, container);
             });
-        }, 3000);
+        }, interval);
     },
     getToCity: function () {
         //return 'Балтийск, Калининградская обл.';
@@ -38,9 +40,6 @@ var ShopLogisticWidget = {
                 : (tarif.pickup_place.indexOf('ПВЗ') >= 0 ? tarif.pickup_place.replace('ПВЗ', 'Пункт выдачи заказов') : ('Пункт выдачи заказов: ' + tarif.pickup_place))
         );
     },
-    getDeliveryPrice: function (tarif, fee) {
-        return (tarif.price + fee);
-    },
     getAddressAndPhone: function (tarif) {
         if (tarif.address === '') {
             return tarif.phone
@@ -49,35 +48,46 @@ var ShopLogisticWidget = {
         }
         return tarif.address + ', ' + tarif.phone;
     },
+    getDeliveryPrice: function (tarif, fee) {
+        return (tarif.price + fee);
+    },
 
     // for example 'Балтийск, Калининградская обл.'
     showWidget: function (to_city, weight, price, fee, container) {
 
-        this.findTarifs(to_city, weight, price, function (tarifs) {
-
-            var html = '<div style="display: block">';
-            html += '<h2>Служба доставки</h2>'
-            html += '<div class="shop2-edost">'
-
-
-            for (var i = 0; i < tarifs.length; i++) {
-                var tarif = tarifs[i];
-                html += '<div class="shop2-edost-variant shop-logistic-variant"><label>';
-                html += '<span style="float: left; width: 40px; min-height: 30px;"><div class="jq-radio" style="user-select: none; display: inline-block; position: relative;"><input type="radio" name="725641[edost][tarif]" value="2:0" style="position: absolute; z-index: -1; opacity: 0;"><div class="jq-radio__div"></div></div></span>';
-
-                html += ShopLogisticWidget.getPickUpPlace(tarif) +
-                    ' - <b>' + ShopLogisticWidget.getDeliveryPrice(tarif, fee) + '</b> руб.'
-                    + '<br/><span style="font-size: 11px;">' + ShopLogisticWidget.getAddressAndPhone(tarif) + '</span>';
-
-                html += '</label></div>';
-            }
-            html += '</div></div>';
-
+        this.injectTarifs(to_city, weight, price, function (tarifs) {
+            var html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
             container.html(html);
         });
     },
 
-    findTarifs: function (to_city, weight, price, tarifsCallback) {
+    prepareTarifsHtml: function (tarifs, fee) {
+        var html = '<div style="display: block">';
+        html += '<h2>Служба доставки</h2>'
+        html += '<div class="shop2-edost">'
+
+
+        for (var i = 0; i < tarifs.length; i++) {
+            var tarif = tarifs[i];
+            html += this.prepareTarifHtml(tarif, fee);
+        }
+        html += '</div></div>';
+        return html;
+    },
+    prepareTarifHtml: function (tarif, fee) {
+        var html = '';
+        html += '<div class="shop2-edost-variant shop-logistic-variant"><label>';
+        html += '<span style="float: left; width: 40px; min-height: 30px;"><div class="jq-radio" style="user-select: none; display: inline-block; position: relative;"><input type="radio" name="725641[edost][tarif]" value="2:0" style="position: absolute; z-index: -1; opacity: 0;"><div class="jq-radio__div"></div></div></span>';
+
+        html += ShopLogisticWidget.getPickUpPlace(tarif) +
+            ' - <b>' + ShopLogisticWidget.getDeliveryPrice(tarif, fee) + '</b> руб.'
+            + '<br/><span style="font-size: 11px;">' + ShopLogisticWidget.getAddressAndPhone(tarif) + '</span>';
+
+        html += '</label></div>';
+        return html;
+    },
+
+    injectTarifs: function (to_city, weight, price, tarifsCallback) {
         this.sendRequest(function (responseXml) {
 
                 if (responseXml === null || responseXml === undefined

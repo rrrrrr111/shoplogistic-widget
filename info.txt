@@ -1,0 +1,97 @@
+Plan
+1. Свои стили
+1.1 прокидывание региона в запрос
+2. Поиск цены посылки и указание в API
+3. При выборе варианта
+    - установка признака выбора
+    - при клике
+        - прописание адреса в адрес доставки
+
+4. ++? Спросить у марии, какой указать вес ? - сообщу по факту
+
+5. Определиться что делать если не выбран область и город ,
+    - наверно дизэйблить кнопку ? можно еще писать текстом что нужно указать регионы ...
+
+
+
+
+
+
+Хостинг http://cp11.megagroup.ru
+Сайт http://plazancosmetics.ru/
+API доставщика http://shop-logistics.ru/services/service/api/
+
+
+Запрос:
+
+<request>
+  <function>get_deliveries_tarifs</function>
+  <api_id>API_ID</api_id>
+  <from_city>405065</from_city>
+  <to_city>405065</to_city>
+  <weight>1</weight>
+  <order_length></order_length>
+  <order_width></order_width>
+  <order_height></order_height>
+  <order_price>1000.00</order_price>
+  <ocen_price>1000.00</ocen_price>
+  <num>1</num>
+</request>
+
+Тег	Описание
+    function	get_deliveries_tarifs - Название функции
+    api_id	API KEY который есть в кабинете у каждого клиента
+    from_city	Код или название города отправителя
+    to_city	Код или название города получателя (Астрахань, Астраханская обл.), но желательно код
+    weight	Вес заказа
+    order_length	Длина для объемного веса
+    order_width	Ширина для объемного веса
+    order_height	Высота для объемного веса
+    order_price	Стоимость заказа (для расчета РКО)
+    ocen_price	Оценочная стоимость заказа (для расчета страховки)
+    num	Средние кол-во заказов в месяц
+
+
+Ответ:
+
+<answer>
+  <error>0</error>
+  <tarifs>
+    <tarif>
+      <price>200</price>
+      <tarifs_type>1</tarifs_type>
+      <srok_dostavki>1</srok_dostavki>
+      <pickup_place/>
+      <address/>
+      <proezd_info></proezd_info>
+      <phone/>
+      <worktime/>
+      <comission_percent>0</comission_percent>
+      <is_terminal/>
+      <to_city_code>405065</to_city_code>
+      <pickup_place_code/>
+      <delivery_partner/>
+      <is_basic>1</is_basic>
+    </tarif>
+  </tarifs>
+</answer>
+
+Тег	Описание
+
+error	// 0 - ошибок нет // 1 - клиент не найден // 2 - не существующая функция
+tarifs	Массив вариантов доставки
+    tarif	Массив который содержит данные о варианте доставки
+        price	Стоимость доставки
+        tarifs_type	Тип тарифа 1- курьерская, 2 - ПВЗ
+        srok_dostavki	Срок доставки
+        pickup_place	Название ПВЗ
+        address	Адрес ПВЗ
+        proezd_info	Информации о местоположении ПВЗ
+        phone	Телефон ПВЗ
+        worktime	Время работы ПВЗ
+        comission_percent	РКО
+        is_terminal	1 - терминал
+        to_city_code	Код города получателя
+        pickup_place_code	Код ПВЗ
+        delivery_partner	Код партнера
+        is_basic	1 - Основной партнер для курьерской доставки
