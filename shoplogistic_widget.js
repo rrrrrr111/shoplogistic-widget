@@ -80,6 +80,7 @@ var ShopLogisticWidget = {
         return (tarif.price + fee);
     },
 
+
     // показ виджета
     showWidget: function (to_city, weight, price, fee, container) {
         if (to_city === '') {
@@ -91,13 +92,14 @@ var ShopLogisticWidget = {
             var html;
             if (tarifs.length > 0) {
                 html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
+                container.html(html);
+                ShopLogisticWidget.bindVariantsSelectionListeners(tarifs, fee);
             } else {
                 html = "<div class='slw-warn'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
+                container.html(html);
             }
-            container.html(html);
         });
     },
-
     prepareTarifsHtml: function (tarifs, fee) {
         var html = '<div style="display: block">';
         html += '<h2>Служба доставки</h2>'
@@ -106,14 +108,14 @@ var ShopLogisticWidget = {
 
         for (var i = 0; i < tarifs.length; i++) {
             var tarif = tarifs[i];
-            html += this.prepareTarifHtml(tarif, fee);
+            html += this.prepareTarifHtml(i, tarif, fee);
         }
         html += '</div></div>';
         return html;
     },
-    prepareTarifHtml: function (tarif, fee) {
+    prepareTarifHtml: function (idx, tarif, fee) {
         var html = '';
-        html += '<div class="shop2-edost-variant shop-logistic-variant"><label>';
+        html += '<div class="shop2-edost-variant slw-variant" idx="' + idx + '"><label>';
         html += '<span style="float: left; width: 40px; min-height: 30px;"><div class="jq-radio" style="user-select: none; display: inline-block; position: relative;"><input type="radio" name="725641[edost][tarif]" value="2:0" style="position: absolute; z-index: -1; opacity: 0;"><div class="jq-radio__div"></div></div></span>';
 
         html += ShopLogisticWidget.getPickUpPlaceName(tarif) +
@@ -122,6 +124,27 @@ var ShopLogisticWidget = {
 
         html += '</label></div>';
         return html;
+    },
+    // слушатели выбора варианта
+    bindVariantsSelectionListeners: function (tarifs, fee) {
+        $('.slw-variant').on('click', function () {
+            $('.slw-variant .jq-radio').removeClass('checked');
+            var $variant = $(this);
+            var radio = $variant.find('.jq-radio');
+            if (!radio.is('.checked')) {
+                radio.addClass('checked');
+            }
+
+            var idx = $variant.attr('idx');
+            var tarif = tarifs[idx];
+
+            var address =
+                ShopLogisticWidget.getPickUpPlaceName(tarif) + ' - ' +
+                ShopLogisticWidget.prepareTarifPrice(tarif, fee) + ' руб., ' +
+                ShopLogisticWidget.getPickUpPlaceAddressAndPhone(tarif);
+            $('textarea[name="725641[address]"]').val(address);
+
+        });
     },
 
     injectTarifs: function (to_city, weight, price, tarifsCallback) {
@@ -206,7 +229,7 @@ var ShopLogisticWidget = {
             '<ocen_price>' + price + '</ocen_price>' +
             '<num>1</num>' +
             '</request>';
-        console.log('Request XML:', xmlRequest); // todo убрать
+        //console.log('Request XML:', xmlRequest);
         return xmlRequest;
     },
 
