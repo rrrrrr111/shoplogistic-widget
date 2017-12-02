@@ -115,14 +115,21 @@ var ShopLogisticWidget = {
     },
     prepareTarifHtml: function (idx, tarif, fee) {
         var html = '';
-        html += '<div class="shop2-edost-variant slw-variant" idx="' + idx + '"><label>';
-        html += '<span style="float: left; width: 40px; min-height: 30px;"><div class="jq-radio" style="user-select: none; display: inline-block; position: relative;"><input type="radio" name="725641[edost][tarif]" value="2:0" style="position: absolute; z-index: -1; opacity: 0;"><div class="jq-radio__div"></div></div></span>';
+        html += '<div class="shop2-edost-variant slw-variant" idx="' + idx + '">' +
+            '<label>';
+        html += '<div style="float: left; width: 40px; min-height: 30px;">' +
+            '<div class="jq-radio" style="display: inline-block; position: relative;">' +
+            '</div>' +
+            '</div>';
 
+        html += '<div style="float: left; width: 80%">';
         html += ShopLogisticWidget.getPickUpPlaceName(tarif) +
             ' - <b>' + ShopLogisticWidget.prepareTarifPrice(tarif, fee) + '</b> руб.'
             + '<br/><span style="font-size: 11px;">' + ShopLogisticWidget.getPickUpPlaceAddressAndPhone(tarif) + '</span>';
+        html += '</div>';
 
-        html += '</label></div>';
+        html += '</label>' +
+            '</div>';
         return html;
     },
     // слушатели выбора варианта
