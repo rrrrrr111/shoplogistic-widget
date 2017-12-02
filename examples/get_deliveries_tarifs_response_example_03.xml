@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<answer>
+    <error>0</error>
+    <tarifs>
+        <tarif>
+            <price>340</price>
+            <tarifs_type>1</tarifs_type>
+            <srok_dostavki>5-6</srok_dostavki>
+            <pickup_place></pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address></address>
+            <proezd_info></proezd_info>
+            <phone></phone>
+            <worktime></worktime>
+            <comission_percent>2</comission_percent>
+            <is_terminal></is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code></pickup_place_code>
+            <delivery_partner></delivery_partner>
+            <partner></partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude></latitude>
+            <longitude></longitude>
+        </tarif>
+        <tarif>
+            <price>420</price>
+            <tarifs_type>1</tarifs_type>
+            <srok_dostavki>5</srok_dostavki>
+            <pickup_place></pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address></address>
+            <proezd_info></proezd_info>
+            <phone></phone>
+            <worktime></worktime>
+            <comission_percent>2.5</comission_percent>
+            <is_terminal></is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code></pickup_place_code>
+            <delivery_partner>MOS000004</delivery_partner>
+            <partner>Boxberry</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude></latitude>
+            <longitude></longitude>
+        </tarif>
+        <tarif>
+            <price>590</price>
+            <tarifs_type>1</tarifs_type>
+            <srok_dostavki>7</srok_dostavki>
+            <pickup_place></pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address></address>
+            <proezd_info></proezd_info>
+            <phone></phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal></is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code></pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude></latitude>
+            <longitude></longitude>
+        </tarif>
+        <tarif>
+            <price>420</price>
+            <tarifs_type>1</tarifs_type>
+            <srok_dostavki>4-7</srok_dostavki>
+            <pickup_place></pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address></address>
+            <proezd_info></proezd_info>
+            <phone></phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal></is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code></pickup_place_code>
+            <delivery_partner>MOS000007</delivery_partner>
+            <partner>СДЭК</partner>
+            <is_basic>0</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude></latitude>
+            <longitude></longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>ПВЗ: BoxBerry: Белгород</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Харьковский пер., д. 36 Г</address>
+            <proezd_info>Пункт выдачи заказов находится в отделении BoxBerry. Транспортом: проехать до ост. Четвертый
+                микрорайон (Харьковская гора, по ул. Костюкова). Перейти на сторону улицы, где находится ТОЦ
+                Владимирский. Обогнув его справа, идти вниз по переулку, по левой стороне. Сразу за парковой полосой
+                расположено многоэтажное жилое здание (рядом детская площадка) Войти в пункт выдачи через вход со
+                стороны парковой полосы
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 08:00-20:00 Вт: 08:00-20:00 Ср: 08:00-20:00 Чт: 08:00-20:00 Пт: 08:00-20:00 Сб: 10:00-15:00
+                Вс: Не работает
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>352907</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.580991</latitude>
+            <longitude>36.586226</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>ПВЗ: Белгород: Попова</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Попова ул., д. 76 А, оф. 1</address>
+            <proezd_info>Пункт выдачи заказов расположен в высоком одноэтажном здании, к которому примыкает остановка
+                общественного транспорта. Транспортом: автобус № 5, 32, 36, 26, 28, 43, 22, троллейбус № 2, 5 до
+                остановки ул. Павлова Войти в здание, пройти к Пункту выдачи заказов
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 09:00-17:30 Вт: 09:00-17:30 Ср: 09:00-17:30 Чт: 09:00-17:30 Пт: 09:00-17:30 Сб: 09:00-14:00
+                Вс: Не работает
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>271193</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.610278</latitude>
+            <longitude>36.592047</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>ПВЗ: Получайка: ТЦ Сокол</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Королева ул., д. 2</address>
+            <proezd_info>Пункт выдачи заказов находится в ТЦ Сокол, в офисе Получайка. Транспортом: маршрутное такси №
+                13, 13к, 15, 17, 20а, 20, 26, 31, 33, 39, 41, 41а, 43, 44, 107т, 111, 111а, 111с, 111у, 117, 117у, 117т,
+                120, 129к, 129м, 133, 229c, 145а, 141, троллейбус № 16 до ост. Электроконтакт Войти в торговый центр
+                через центральный вход, подняться на 2 этаж, пройти к офису Получайка
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: Не работает Вт: 10:00-19:00 Ср: 10:00-19:00 Чт: 10:00-19:00 Пт: 10:00-19:00 Сб: 12:00-16:00
+                Вс: Не работает
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>307294</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.57169</latitude>
+            <longitude>36.570442</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: Гипермаркет Лента</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Щорса ул., 43А</address>
+            <proezd_info>Постамат расположен в Гипермаркете Лента. Транспортом: автобус № 13, 13к, 15, 17, 31, 41, 43,
+                троллейбус № 15, 16 до ост. ул. Щорса Войти в гипермаркет, подняться на 2-й этаж, слева от выхода с
+                траволатора расположен Постамат
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 09:00-22:00 Вт: 09:00-22:00 Ср: 09:00-22:00 Чт: 09:00-22:00 Пт: 09:00-22:00 Сб: 09:00-22:00
+                Вс: 09:00-22:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>672421</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.565225</latitude>
+            <longitude>36.57196</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: МегаГринн</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Б.Хмельницкого пр-кт, д. 137 Т</address>
+            <proezd_info>Постамат расположен в ТЦ МегаГринн. Транспортом: автобус № 1н, 2н, 4н, 15, 17, 37, 38, 106,
+                106а, 111с, 111у, 128, 212, троллейбус № 1, 4, 7, 8, 16, маршрутное такси № 22а, 25, 28, 33а, 43, 130,
+                145, 213 до ост. МегаГРИНН Войти в торговый центр через главный вход, подняться на 2-й этаж. Между
+                магазинами Спортмастер и City Man расположен Постамат PickPoint
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 10:00-22:00 Вт: 10:00-22:00 Ср: 10:00-22:00 Чт: 10:00-22:00 Пт: 10:00-22:00 Сб: 10:00-22:00
+                Вс: 10:00-22:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>339908</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.632777</latitude>
+            <longitude>36.570936</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Атлас</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Щорса ул., д. 8 Д</address>
+            <proezd_info>Постамат расположен в ТЦ Атлас. Транспортом: маршрутное такси № 1Н, 11С, 111У до ост. Водстрой
+                Войти в торговый центр через главный вход. Спуститься по лестнице вниз, повернуть направо, пройти по
+                коридору 20м, справа расположен Постамат.
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 08:00-22:00 Вт: 08:00-22:00 Ср: 08:00-22:00 Чт: 08:00-22:00 Пт: 08:00-22:00 Сб: 08:00-22:00
+                Вс: 08:00-22:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>324992</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.585126</latitude>
+            <longitude>36.565457</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Гулливер</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Юности б-р, д. 5Б</address>
+            <proezd_info>Постамат расположен в ТЦ Гулливер. ТЦ находится между ул. Конева и бульваром Юности.
+                Транспортом: маршрут 129 до ост. ул. Конева Войти в торговый центр через главный вход. Справа от входа,
+                около магазина продуктов расположен Постамат PickPoint
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 00:00-23:59 Вт: 00:00-23:59 Ср: 00:00-23:59 Чт: 00:00-23:59 Пт: 00:00-23:59 Сб: 00:00-23:59
+                Вс: 00:00-23:59
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>462873</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.560928</latitude>
+            <longitude>36.565501</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Линия</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Королева ул., д. 9 А</address>
+            <proezd_info>Постамат расположен в ТЦ Линия. Транспортом: маршрутное такси № 3, 7, 9к до ост. ДС Космос. ТЦ
+                находится между стадионом Космос и кинотеатром Русич Войти в торговый центр через главный вход,
+                подняться на 2-й этаж. Вдоль стены расположен Постамат PickPoint
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 10:00-22:00 Вт: 10:00-22:00 Ср: 10:00-22:00 Чт: 10:00-22:00 Пт: 10:00-22:00 Сб: 10:00-22:00
+                Вс: 10:00-22:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>113338</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.574013</latitude>
+            <longitude>36.580611</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Меркурий</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Победы ул., д. 147</address>
+            <proezd_info>Постамат расположен в ТЦ Меркурий. Транспортом: от автовокзала автобус № 43 до ост. Родина.
+                Рядом расположен новый корпус Белгородского Государственного Университета Войти в торговый центр через
+                главный вход, подняться на 2-й этаж, рядом с лифтом и центральной лестницей расположен Постамат.
+                Ориентир- рядом магазин FixPrice и универмаг Фамилия
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 08:00-23:00 Вт: 08:00-23:00 Ср: 08:00-23:00 Чт: 08:00-23:00 Пт: 08:00-23:00 Сб: 08:00-23:00
+                Вс: 08:00-23:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>691785</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.594871</latitude>
+            <longitude>36.573676</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: ТЦ Сити Молл Белгородский</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Щорса ул., д. 64</address>
+            <proezd_info>Постамат расположен в Сити Молл Белгородский. Транспорт: Автобус № 111с, 111у, 111, 117у;
+                Маршрутное такси № 117т, 141, 43, 120, 145а, 117, 229с. Остановка Ситимолл. Войти в ТЦ через вход № 3.
+                Ближайший вход к строймаркету Стройдепо. Слева перед входом строймаркет расположен постамат.
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 10:00-22:00 Вт: 10:00-22:00 Ср: 10:00-22:00 Чт: 10:00-22:00 Пт: 10:00-22:00 Сб: 10:00-22:00
+                Вс: 10:00-22:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>600448</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.552504</latitude>
+            <longitude>36.569005</longitude>
+        </tarif>
+        <tarif>
+            <price>440</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>Постамат: Универмаг Белгородский</pickup_place>
+            <pickup_places_type_name></pickup_places_type_name>
+            <address>Попова ул., д. 36</address>
+            <proezd_info>Постамат расположен в ТЦ Универмаг Белгород. Транспортом: автобус № 16, 2Н, троллейбус № 2, 5,
+                маршрутное такси № 32, 21, 12, 33, 22а до ост. Универмаг Белгород Войти в ТЦ. Подняться на 2 этаж.
+                Направо от эскалатора, рядом с магазином ZENDEN расположен постамат
+            </proezd_info>
+            <phone>+7 495 988 1230</phone>
+            <worktime>Пн: 10:00-21:00 Вт: 10:00-21:00 Ср: 10:00-21:00 Чт: 10:00-21:00 Пт: 10:00-21:00 Сб: 10:00-21:00
+                Вс: 10:00-21:00
+            </worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>986808</pickup_place_code>
+            <delivery_partner>MOS000037</delivery_partner>
+            <partner>PickPoint</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.599857</latitude>
+            <longitude>36.590546</longitude>
+        </tarif>
+        <tarif>
+            <price>220</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>ПВЗ Белгород, Королёва улица</pickup_place>
+            <pickup_places_type_name>А</pickup_places_type_name>
+            <address>г.Белгород, ул.Королёва, д.2</address>
+            <proezd_info>Как добраться: Остановка общественного транспорта Электро контакт/Контакт . Транспорт:
+                маршрутное такси №^ 2, 3, 4а, 7, 8, 13, 13к, 15, 17, 20а, 20, 26, 31, 33, 39, 41, 41а, 43, 44, 107т,
+                111, 111а, 111с, 111у, 117, 117у, 117т, 120, 129к, 129м, 133, 229c, 145а, 141, 150. От остановки
+                пройдите прямо 50 метров в сторону кругового движения и поверните направо, к входу в ТЦ Сокол.
+                Поднимаетесь на 2-ой этаж и поверните налево. Затем второй пролет направо. Для ориентира, на двери
+                вывеска ``ПолуЧайка`` пункт выдачи заказов.
+            </proezd_info>
+            <phone>8-904-085-34-99</phone>
+            <worktime>Вт-Пт: 12:00 - 19:00, Сб: 12:00 - 16:00</worktime>
+            <comission_percent>2</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>570066</pickup_place_code>
+            <delivery_partner></delivery_partner>
+            <partner></partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.57169</latitude>
+            <longitude>36.570442</longitude>
+        </tarif>
+        <tarif>
+            <price>220</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-4</srok_dostavki>
+            <pickup_place>ПВЗ Белгород, Попова улица</pickup_place>
+            <pickup_places_type_name>А</pickup_places_type_name>
+            <address>ул. Попова, д. 76а, офис 1</address>
+            <proezd_info>Как добраться: Остановка общественного транспорта «Улица имени Павлова». Транспорт: автобусы №:
+                5, 43, 32, 26. Пункт выдачи находится в здании ``Региональной службы доставки`` рядом с остановкой. Офис
+                1.
+            </proezd_info>
+            <phone>8-4722-31-26-21</phone>
+            <worktime>Будни: 9 - 20 Сб: 9 - 14 Вс: 14 - 18</worktime>
+            <comission_percent>2</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>663752</pickup_place_code>
+            <delivery_partner></delivery_partner>
+            <partner></partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.610278</latitude>
+            <longitude>36.592047</longitude>
+        </tarif>
+        <tarif>
+            <price>300</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>3-5</srok_dostavki>
+            <pickup_place>Белгород (На Харьковской)</pickup_place>
+            <pickup_places_type_name>Д</pickup_places_type_name>
+            <address>УЛ. ХАРЬКОВСКАЯ, 34, корп. 1</address>
+            <proezd_info></proezd_info>
+            <phone>79205803434, 74722218370</phone>
+            <worktime>пн-пт 08:00-21:00, сб-вс 10:00-16:00</worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>940527</pickup_place_code>
+            <delivery_partner>MOS000007</delivery_partner>
+            <partner>СДЭК</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.587792</latitude>
+            <longitude>36.583297</longitude>
+        </tarif>
+        <tarif>
+            <price>320</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>4-6</srok_dostavki>
+            <pickup_place>Белгород Королева_3109_С</pickup_place>
+            <pickup_places_type_name>С</pickup_places_type_name>
+            <address>308000, Белгород г, Королева ул, д.2</address>
+            <proezd_info>Проезд: автобус №№ - 7, 2, 3, 24а, 33, 33а, 127, 128с, 129, 13, 13к, 15, 17, 31, 111С, 111У,
+                117У, 151, 20, 26, 29, 32, 37, 38, 41, 41а, 43, 107т, 111, 117, 120, 133, 144, 145, 153, 217, 229
+                троллейбус №№ - 8, 9-к, 9-с, 16. Остановка: Завод Электроконтакт , Мокроусова , Королева . От остановки
+                Мокросува по направлению в центральную часть города: направляться в сторону деревянной церкви, минуя
+                церковь, перейти дорогу, войти в центральный вход ТЦ Сокол, подняться на второй этаж, идти прямо по
+                коридору до упора, повернуть налево; От остановки Завод Электроконтакт по направлению в центральную
+                часть города: повернуть направо, направляться по направлению к деревянной церкви до пешеходного
+                перехода, не переходя дорогу, повернуть направо, войти в центральный вход ТЦ Сокол, подняться на второй
+                этаж, идти прямо по коридору до упора, повернуть налево; От остановки Завод Электроконтакт по
+                направлению к Сити Моллу: перейти дорогу, повернуть налево, направляться по направлению к деревянн
+            </proezd_info>
+            <phone>8-800-700-54-30</phone>
+            <worktime>пн-пт: 10.00-19.00, сб: 10.00-14.00</worktime>
+            <comission_percent>2.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>716460</pickup_place_code>
+            <delivery_partner>MOS000004</delivery_partner>
+            <partner>Boxberry</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.57169</latitude>
+            <longitude>36.570442</longitude>
+        </tarif>
+        <tarif>
+            <price>320</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>4-6</srok_dostavki>
+            <pickup_place>Белгород Славы_3106_С</pickup_place>
+            <pickup_places_type_name>С</pickup_places_type_name>
+            <address>308000, Белгород г, Славы пр-кт, д.40</address>
+            <proezd_info>Проезд: автобус №№ - 2,2Н,3,13,13К,16,3Н,4Н, троллейбус №№ - 1,2,4,5,6,13, марш. такси №№ -
+                9,12,18,19,21,28,30,33,33а,36,101,101а,103,119,130,223,223А,223Д. Остановка: Донец , Стоматологическая
+                Поликлиника . От остановки Донец , перейти улицу, идти вдоль здания № 44 (коричневое здание), далее
+                пройти вдоль ресторана Печки-Лавочки , магазин Хрусталь Белогорья , перед офисом Билайн повернуть
+                налево. Пройти 20 метров и с левой стороны будет офис, вход с торца. От остановки Стоматологическая
+                поликлиника - перейти улицу, двигаться во дворы между магазином Кулинария и офисом Голос Белогорья,
+                общественная организация , видим угол жилого дома серого цвета (Славы, 40) идти вдоль здания, в конце
+                дома повернуть направо и упираемся в офис.
+            </proezd_info>
+            <phone>8-800-700-54-30</phone>
+            <worktime>пн-пт: 09.00-19.00, сб: 10.00-14.00</worktime>
+            <comission_percent>2.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>478784</pickup_place_code>
+            <delivery_partner>MOS000004</delivery_partner>
+            <partner>Boxberry</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.597004</latitude>
+            <longitude>36.59626</longitude>
+        </tarif>
+        <tarif>
+            <price>470</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>7</srok_dostavki>
+            <pickup_place>Белгород (4867081503000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Белгородская обл., г. Белгород, ул. Железнякова, д. 14</address>
+            <proezd_info>Троллейбус № 5. Маршрутное такси № 5,33,43,42,22,32,28,26. Остановка Овен , во дворе за
+                9-этажным общежитием, отдельно стоящее здание из красного кирпича.
+            </proezd_info>
+            <phone>8-903-886-05-06</phone>
+            <worktime>Время работы: понедельник-пятница: с 08:00 до 20:00 Суббота: с 10:00 до 14:00. Воскресенье:
+                выходной.
+            </worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>364277</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.633046</latitude>
+            <longitude>36.576155</longitude>
+        </tarif>
+        <tarif>
+            <price>470</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>7</srok_dostavki>
+            <pickup_place>Белгород (67952599000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Белгородская обл., г. Белгород, ул. Попова, д. 76 А</address>
+            <proezd_info>Остановка Ул. Павлова - автобус 5, 32, 36, 26, 28,43,22, троллейбусы - 5, 2. Офис Региональная
+                служба доставки - Белгород
+            </proezd_info>
+            <phone>8 (4722) 31-26-21</phone>
+            <worktime>Время работы: понедельник - пятница: с 9.00 до 17.30. Суббота: с 9.00 до 14.00. Воскресенье: с
+                14.00 до 18.00
+            </worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>415459</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.610278</latitude>
+            <longitude>36.592047</longitude>
+        </tarif>
+        <tarif>
+            <price>470</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>7</srok_dostavki>
+            <pickup_place>Белгород (7946943444000)</pickup_place>
+            <pickup_places_type_name>ОК</pickup_places_type_name>
+            <address>Белгородская обл., г. Белгород, Юности б-р, д. 5б</address>
+            <proezd_info>остановки: «Улица Конева», «Солнечный» , «Педучилище», Завод Луч , ТЦ Гуливер , -1 этаж. Пункт
+                выдачи Все инструменты .
+            </proezd_info>
+            <phone>+7-4722-219-081</phone>
+            <worktime></worktime>
+            <comission_percent>3</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>990109</pickup_place_code>
+            <delivery_partner>MOS000014</delivery_partner>
+            <partner>О-Курьер</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.560928</latitude>
+            <longitude>36.565501</longitude>
+        </tarif>
+        <tarif>
+            <price>390</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>4-5</srok_dostavki>
+            <pickup_place>ПВЗ-1 Белгород</pickup_place>
+            <pickup_places_type_name>TD</pickup_places_type_name>
+            <address>ул. Попова, д.76 а</address>
+            <proezd_info>Ост. «Павлова», вывеска « Экспресс-доставка», оф. 1.</proezd_info>
+            <phone>+7 (495) 663-50-14</phone>
+            <worktime>Пн: 09.00 - 20.00 Вт: 09.00 - 20.00 Ср: 09.00 - 20.00 Чт: 09.00 - 20.00 Пт: 09.00 - 20.00 Сб:
+                09.00 - 14.00 Вс: 14.00 - 18.00
+            </worktime>
+            <comission_percent>2.75</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>883531</pickup_place_code>
+            <delivery_partner>MOS000009</delivery_partner>
+            <partner>ТопДеливери</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.610278</latitude>
+            <longitude>36.592047</longitude>
+        </tarif>
+        <tarif>
+            <price>380</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>4</srok_dostavki>
+            <pickup_place>Белгород (115O)</pickup_place>
+            <pickup_places_type_name>DPD</pickup_places_type_name>
+            <address>ул. Попова, 76А</address>
+            <proezd_info>Остановка «Ул. Павлова». Маршрутные такси 5, 32, 26, 43, 33 ; троллейбус – 5.</proezd_info>
+            <phone>+7 (800) 250 44 34</phone>
+            <worktime>Пн,Вт,Ср,Чт,Пт: 09:00 - 20:00 Сб: 09:00 - 14:00 Вс: 14:00 - 18:00</worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>730653</pickup_place_code>
+            <delivery_partner>MOS000010</delivery_partner>
+            <partner>DPD</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.609916</latitude>
+            <longitude>36.592158</longitude>
+        </tarif>
+        <tarif>
+            <price>380</price>
+            <tarifs_type>2</tarifs_type>
+            <srok_dostavki>4</srok_dostavki>
+            <pickup_place>Белгород (76J)</pickup_place>
+            <pickup_places_type_name>DPD</pickup_places_type_name>
+            <address>пр-кт. Гражданский, 36</address>
+            <proezd_info>220 Вольт</proezd_info>
+            <phone>+7 (800) 250 44 34</phone>
+            <worktime>Пн,Вт,Ср,Чт,Пт: 09:00 - 19:00 Сб,Вс: 10:00 - 19:00</worktime>
+            <comission_percent>3.5</comission_percent>
+            <is_terminal>0</is_terminal>
+            <to_city_code>Белгород, Белгородская область</to_city_code>
+            <pickup_place_code>675692</pickup_place_code>
+            <delivery_partner>MOS000010</delivery_partner>
+            <partner>DPD</partner>
+            <is_basic>1</is_basic>
+            <obl_km_pay>0</obl_km_pay>
+            <latitude>50.594253</latitude>
+            <longitude>36.596933</longitude>
+        </tarif>
+    </tarifs>
+</answer>

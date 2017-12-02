@@ -3,7 +3,7 @@ var ShopLogisticWidget = {
     // запуск наблюдателя старой кнопки
     startCalculationButtonObserver: function () {
 
-        var interval = 1000; // todo вернуть 3000
+        var interval = 1500;
 
         setInterval(function () {
             var $oldButton = $('a#shop2-edost-calc');
@@ -15,12 +15,19 @@ var ShopLogisticWidget = {
             $oldButton.parent().append(
                 '<a id="shoplogistic-calc-button" href="#" class="shop2-btn" style="color: #f75e82;">Рассчитать</a>');
 
-            var $newButton = $('a#shoplogistic-calc-button');
-            $newButton.on("click", function () {
+            var $oldContainer = $('div#delivery-725641-html');
+            if ($oldContainer !== null) {
+                $oldContainer.hide(); // скрываем старые варианты доставки, т к при перегрузке страницы могут отобразиться
+                $oldContainer.parent().append('<div id="shoplogistic-variants-cont"></div>');
+            }
 
-                var container = $('div#delivery-725641-html');
-                if (container === null || container === undefined) {
-                    console.error('Deliveries container not found');
+            var $newButton = $('a#shoplogistic-calc-button');
+            $newButton.on("click", function (e) {
+                e.preventDefault(); // для сохранения прокрутки после вставки HTML
+
+                var newContainer = $('div#shoplogistic-variants-cont');
+                if (newContainer === null || newContainer === undefined) {
+                    console.error('Deliveries newContainer not found');
                     return;
                 }
                 var widget = ShopLogisticWidget;
@@ -30,7 +37,7 @@ var ShopLogisticWidget = {
                 var weight = '1';       // вес посылки
 
                 var toCity = widget.getDeliveryRegionAndCity();  // место назначения
-                widget.showWidget(toCity, weight, price, fee, container);
+                widget.showWidget(toCity, weight, price, fee, newContainer);
             });
         }, interval);
     },
@@ -63,8 +70,12 @@ var ShopLogisticWidget = {
     // наименование варианта доставки
     getPickUpPlaceName: function (tarif) {
         return (tarif.tarifs_type === '1'
-                ? (tarif.pickup_place.indexOf('урьер') >= 0 ? tarif.pickup_place : 'Курьером ' + tarif.pickup_place)
-                : (tarif.pickup_place.indexOf('ПВЗ') >= 0 ? tarif.pickup_place.replace('ПВЗ', 'Пункт выдачи заказов') : ('Пункт выдачи заказов: ' + tarif.pickup_place))
+                ? (tarif.pickup_place.indexOf('урьер') >= 0
+                    ? (tarif.pickup_place + ' ' + tarif.partner)
+                    : ('Курьером ' + tarif.partner + ' ' + tarif.pickup_place))
+                : (tarif.pickup_place.indexOf('ПВЗ:') >= 0
+                    ? (tarif.pickup_place.replace('ПВЗ:', 'Пункт выдачи заказов') + ' ' + tarif.partner)
+                    : ('Пункт выдачи заказов ' + tarif.partner + ' ' + tarif.pickup_place))
         );
     },
     // адрес и телефон варианта доставки
@@ -80,25 +91,28 @@ var ShopLogisticWidget = {
         return (tarif.price + fee);
     },
 
-
     // показ виджета
     showWidget: function (to_city, weight, price, fee, container) {
         if (to_city === '') {
             var html = "<div style='color: #f75e82; font-size: 14px;'>Укажите Ваш регион и город для расчета вариантов доставки</div>";
-            container.html(html);
+            ShopLogisticWidget.injectHtml(container, html);
             return
         }
         this.injectTarifs(to_city, weight, price, function (tarifs) {
             var html;
             if (tarifs.length > 0) {
                 html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
-                container.html(html);
+                ShopLogisticWidget.injectHtml(container, html);
                 ShopLogisticWidget.bindVariantsSelectionListeners(tarifs, fee);
             } else {
                 html = "<div style='color: #f75e82; font-size: 14px;'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
-                container.html(html);
+                ShopLogisticWidget.injectHtml(container, html);
             }
         });
+    },
+
+    injectHtml: function (container, html) {
+        container.html(html);
     },
     prepareTarifsHtml: function (tarifs, fee) {
         var html = '<div style="display: block">';
