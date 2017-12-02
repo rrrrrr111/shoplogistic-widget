@@ -219,10 +219,11 @@ var ShopLogisticWidget = {
     },
 
     sendAjaxRequest: function (requestCallback, to_city, weight, price) {
-        var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
+        var apiKey = 'c8ce012647c577d9558ab9c7acaa67d8';
+        //var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
         $.ajax({
-            //url: 'http://client-shop-logistics.ru/index.php?route=deliveries/api',
-            url: 'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>,
+            url: 'http://client-shop-logistics.ru/index.php?route=deliveries/api',
+            //url: 'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>,
             method: 'POST',
             data: 'xml=' + encodeURIComponent(
                 ShopLogisticWidget.Base64.encode(
