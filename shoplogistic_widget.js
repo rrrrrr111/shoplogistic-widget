@@ -1,4 +1,6 @@
 var ShopLogisticWidget = {
+
+    // запуск наблюдателя старой кнопки
     startCalculationButtonObserver: function () {
 
         var interval = 1000; // todo вернуть 3000
@@ -21,25 +23,40 @@ var ShopLogisticWidget = {
                     console.error('Deliveries container not found');
                     return;
                 }
+                var widget = ShopLogisticWidget;
 
-                var price = '1000.00';  // ценность посылки
+                var price = widget.getPrice();
                 var fee = 70;           // дополнительная комиссия добавляемая к сумме доставки
                 var weight = '1';       // вес посылки
-                var toCity = ShopLogisticWidget.getToCity();  // место назначения
-                ShopLogisticWidget.showWidget(toCity, weight, price, fee, container);
+
+                var toCity = widget.getToCity();  // место назначения
+                widget.showWidget(toCity, weight, price, fee, container);
             });
         }, interval);
     },
+    // ценность посылки
+    getPrice: function () {
+        var summ = parseInt($('div.cart-preview-sum').text());
+        if (typeof summ === 'number' && summ > 0) {
+            return summ;
+        } else {
+            console.log('Cart price not found, price considered as 1000');
+            return 1000;
+        }
+    },
+    // регион доаставки
     getToCity: function () {
         //return 'Балтийск, Калининградская обл.';
         return 'Москва';
     },
+    // наименование варианта доставки
     getPickUpPlace: function (tarif) {
         return (tarif.tarifs_type === '1'
                 ? (tarif.pickup_place.indexOf('урьер') >= 0 ? tarif.pickup_place : 'Курьером ' + tarif.pickup_place)
                 : (tarif.pickup_place.indexOf('ПВЗ') >= 0 ? tarif.pickup_place.replace('ПВЗ', 'Пункт выдачи заказов') : ('Пункт выдачи заказов: ' + tarif.pickup_place))
         );
     },
+    // адрес и телефон варианта доставки, for example 'Балтийск, Калининградская обл.'
     getAddressAndPhone: function (tarif) {
         if (tarif.address === '') {
             return tarif.phone
@@ -52,7 +69,7 @@ var ShopLogisticWidget = {
         return (tarif.price + fee);
     },
 
-    // for example 'Балтийск, Калининградская обл.'
+    // показ виджета
     showWidget: function (to_city, weight, price, fee, container) {
 
         this.injectTarifs(to_city, weight, price, function (tarifs) {
@@ -88,7 +105,7 @@ var ShopLogisticWidget = {
     },
 
     injectTarifs: function (to_city, weight, price, tarifsCallback) {
-        this.sendRequest(function (responseXml) {
+        this.sendAjaxRequest(function (responseXml) {
 
                 if (responseXml === null || responseXml === undefined
                     || (typeof responseXml === 'string' && !responseXml.startsWith('<?xml'))) {
@@ -136,30 +153,15 @@ var ShopLogisticWidget = {
         );
     },
 
-    sendRequest: function (requestCallback,
-                           to_city,
-                           weight,
-                           price) {
+    sendAjaxRequest: function (requestCallback, to_city, weight, price) {
         var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
         $.ajax({
             //url: 'http://client-shop-logistics.ru/index.php?route=deliveries/api',
             url: 'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>,
             method: 'POST',
             data: 'xml=' + encodeURIComponent(
-                this.Base64.encode(
-                    '<request>' +
-                    '<function>get_deliveries_tarifs</function>' +
-                    '<api_id>' + apiKey + '</api_id>' +
-                    '<from_city>405065</from_city>' +
-                    '<to_city>' + to_city + '</to_city>' +
-                    '<weight>' + weight + '</weight>' +
-                    '<order_length></order_length>' +
-                    '<order_width></order_width>' +
-                    '<order_height></order_height>' +
-                    '<order_price>' + price + '</order_price>' +
-                    '<ocen_price>' + price + '</ocen_price>' +
-                    '<num>1</num>' +
-                    '</request>'
+                ShopLogisticWidget.Base64.encode(
+                    ShopLogisticWidget.prepareRequestXml(apiKey, to_city, weight, price)
                 )
             )
         }).success(function (data, textStatus, jqXhr) {
@@ -167,6 +169,25 @@ var ShopLogisticWidget = {
         }).fail(function (jqXhr, textStatus, errorThrown) {
             console.error('Error in response on loading data by shoplogistic widget: ' + textStatus + ': ' + errorThrown);
         });
+    },
+
+    prepareRequestXml: function (apiKey, to_city, weight, price) {
+        var xmlRequest =
+            '<request>' +
+            '<function>get_deliveries_tarifs</function>' +
+            '<api_id>' + apiKey + '</api_id>' +
+            '<from_city>405065</from_city>' +
+            '<to_city>' + to_city + '</to_city>' +
+            '<weight>' + weight + '</weight>' +
+            '<order_length></order_length>' +
+            '<order_width></order_width>' +
+            '<order_height></order_height>' +
+            '<order_price>' + price + '</order_price>' +
+            '<ocen_price>' + price + '</ocen_price>' +
+            '<num>1</num>' +
+            '</request>';
+        console.log('Request XML:', xmlRequest);
+        return xmlRequest;
     },
 
     Base64: {

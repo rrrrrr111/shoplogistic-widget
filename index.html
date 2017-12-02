@@ -15,10 +15,73 @@
     <link rel="stylesheet" href="http://plazancosmetics.ru/d/1111065/t/v916/images/theme0/theme.scss.css">
     <link rel="stylesheet" href="http://plazancosmetics.ru/d/1111065/t/v916/images/styles_bdr.scss.css" type="text/css">
     <link rel="stylesheet" href="http://plazancosmetics.ru/d/1111065/t/v916/images/styles_bdr.scss.css" type="text/css">
-    <link rel="stylesheet" href="http://plazancosmetics.ru/g/templates/solutions/all/form/gr-form.less.css" type="text/css">
+    <link rel="stylesheet" href="http://plazancosmetics.ru/g/templates/solutions/all/form/gr-form.less.css"
+          type="text/css">
 </head>
 <body onload="ShopLogisticWidget.startCalculationButtonObserver()">
 <h1>Виджет Shop Logistic</h1>
+
+
+<div class="top-panel-wrapper">
+    <div class="top-panel clear-self">
+        <div class="right-side">
+            <div class="block-user">
+                <div class="block-title">Кабинет</div>
+                <div class="block-body">
+                    <form method="post" action="/user">
+                        <div class="block-body-in">
+                            <input type="hidden" name="mode" value="login">
+                            <div class="field name">
+                                <label class="input"><input type="text" name="login" id="login" tabindex="1" value=""
+                                                            placeholder="Логин"></label>
+                            </div>
+                            <div class="field password clear-self">
+                                <label class="input pass"><input type="password" name="password" id="password"
+                                                                 tabindex="2" value="" placeholder="Пароль"></label>
+                                <button type="submit">Войти</button>
+                                <a href="/user/forgot_password" class="forgot">Забыли пароль?</a>
+                            </div>
+                        </div>
+                        <div class="field links clear-self">
+                            <a href="/user/register" class="register">Регистрация</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="shop2-cart-preview">
+                <a href="/magazin/cart">
+                    <div class="shop2-block cart-preview opened">
+                        <div class="block-body">
+                            <div class="cart-preview-col">1</div>
+                            <div class="cart-preview-sum">1200 <span>руб.</span></div>
+                            <div class="order-btn">Оформить заказ</div>
+                        </div>
+                    </div>
+                </a>
+            </div><!-- Cart Preview --></div>
+        <div class="left-side clear-self">
+            <div class="top-menu-wrapper">
+                <div class="top-menu-but"></div>
+                <div class="top-menu-in" style="max-height: 687px;">
+                    <div class="top-menu-close"></div>
+                    <ul class="top-menu drop">
+                        <li class="opened"><a href="/">Главная</a></li>
+                        <li><a href="/o-kompanii">О компании</a></li>
+                        <li><a href="/blog-o-krasote">Блог о красоте</a></li>
+                        <li><a href="/oplata">Оплата</a></li>
+                        <li><a href="/dostavka">Доставка</a></li>
+                        <li><a href="/garantiya-proizvoditelya">Гарантия</a></li>
+                        <li><a href="/dileram">Дилерам</a></li>
+                        <li><a href="/dogovor-oferty">Договор оферты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="option-type active-type">
     <label class="option-label">
         <div class="jq-radio checked" unselectable="on"
@@ -88,7 +151,7 @@
             </label>
         </div>
         <div id="delivery-725641-html">
-                                                        </div>
+        </div>
     </div>
 </div>
 </body>
