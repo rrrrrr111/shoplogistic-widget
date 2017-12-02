@@ -29,7 +29,7 @@ var ShopLogisticWidget = {
                 var fee = 70;           // дополнительная комиссия добавляемая к сумме доставки
                 var weight = '1';       // вес посылки
 
-                var toCity = widget.getToCity();  // место назначения
+                var toCity = widget.getDeliveryRegionAndCity();  // место назначения
                 widget.showWidget(toCity, weight, price, fee, container);
             });
         }, interval);
@@ -44,20 +44,31 @@ var ShopLogisticWidget = {
             return 1000;
         }
     },
-    // регион доаставки
-    getToCity: function () {
-        //return 'Балтийск, Калининградская обл.';
-        return 'Москва';
+    // регион доставки, for example 'Балтийск, Калининградская обл.' | 'Москва'
+    getDeliveryRegionAndCity: function () {
+
+        var $regionSelect = $('#shop2-edost2-region');
+        var $citySelect = $('#shop2-edost2-city');
+
+        if ($regionSelect.val() === 'default' || $citySelect.val() === 'default') {
+            return '';
+        }
+        var reg = $regionSelect.find('option:selected').text();
+        var city = $citySelect.find('option:selected').text();
+        if (city !== undefined && city !== null && city.length > 0) {
+            return city + ', ' + reg;
+        }
+        return reg;
     },
     // наименование варианта доставки
-    getPickUpPlace: function (tarif) {
+    getPickUpPlaceName: function (tarif) {
         return (tarif.tarifs_type === '1'
                 ? (tarif.pickup_place.indexOf('урьер') >= 0 ? tarif.pickup_place : 'Курьером ' + tarif.pickup_place)
                 : (tarif.pickup_place.indexOf('ПВЗ') >= 0 ? tarif.pickup_place.replace('ПВЗ', 'Пункт выдачи заказов') : ('Пункт выдачи заказов: ' + tarif.pickup_place))
         );
     },
-    // адрес и телефон варианта доставки, for example 'Балтийск, Калининградская обл.'
-    getAddressAndPhone: function (tarif) {
+    // адрес и телефон варианта доставки
+    getPickUpPlaceAddressAndPhone: function (tarif) {
         if (tarif.address === '') {
             return tarif.phone
         } else if (tarif.phone === '') {
@@ -65,15 +76,24 @@ var ShopLogisticWidget = {
         }
         return tarif.address + ', ' + tarif.phone;
     },
-    getDeliveryPrice: function (tarif, fee) {
+    prepareTarifPrice: function (tarif, fee) {
         return (tarif.price + fee);
     },
 
     // показ виджета
     showWidget: function (to_city, weight, price, fee, container) {
-
+        if (to_city === '') {
+            var html = "<div class='slw-warn'>Укажите Ваш регион и город для расчета вариантов доставки</div>";
+            container.html(html);
+            return
+        }
         this.injectTarifs(to_city, weight, price, function (tarifs) {
-            var html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
+            var html;
+            if (tarifs.length > 0) {
+                html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
+            } else {
+                html = "<div class='slw-warn'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
+            }
             container.html(html);
         });
     },
@@ -96,9 +116,9 @@ var ShopLogisticWidget = {
         html += '<div class="shop2-edost-variant shop-logistic-variant"><label>';
         html += '<span style="float: left; width: 40px; min-height: 30px;"><div class="jq-radio" style="user-select: none; display: inline-block; position: relative;"><input type="radio" name="725641[edost][tarif]" value="2:0" style="position: absolute; z-index: -1; opacity: 0;"><div class="jq-radio__div"></div></div></span>';
 
-        html += ShopLogisticWidget.getPickUpPlace(tarif) +
-            ' - <b>' + ShopLogisticWidget.getDeliveryPrice(tarif, fee) + '</b> руб.'
-            + '<br/><span style="font-size: 11px;">' + ShopLogisticWidget.getAddressAndPhone(tarif) + '</span>';
+        html += ShopLogisticWidget.getPickUpPlaceName(tarif) +
+            ' - <b>' + ShopLogisticWidget.prepareTarifPrice(tarif, fee) + '</b> руб.'
+            + '<br/><span style="font-size: 11px;">' + ShopLogisticWidget.getPickUpPlaceAddressAndPhone(tarif) + '</span>';
 
         html += '</label></div>';
         return html;
@@ -186,7 +206,7 @@ var ShopLogisticWidget = {
             '<ocen_price>' + price + '</ocen_price>' +
             '<num>1</num>' +
             '</request>';
-        console.log('Request XML:', xmlRequest);
+        console.log('Request XML:', xmlRequest); // todo убрать
         return xmlRequest;
     },
 
