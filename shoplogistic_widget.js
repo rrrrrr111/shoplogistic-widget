@@ -162,7 +162,8 @@ var ShopLogisticWidget = {
             var address =
                 ShopLogisticWidget.getPickUpPlaceName(tarif) + ' - ' +
                 ShopLogisticWidget.prepareTarifPrice(tarif, fee) + ' руб., ' +
-                ShopLogisticWidget.getPickUpPlaceAddressAndPhone(tarif);
+                ShopLogisticWidget.getPickUpPlaceAddressAndPhone(tarif) +
+                (tarif.tarifs_type === '1' ? ' <Укажите здесь Ваш адрес>' : '');
             $('textarea[name="725641[address]"]').val(address);
 
         });
