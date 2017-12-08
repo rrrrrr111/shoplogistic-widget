@@ -98,6 +98,11 @@ var ShopLogisticWidget = {
             ShopLogisticWidget.injectHtml(container, html);
             return
         }
+
+        var html = "<div style='color: #f75e82; font-size: 14px;'>Ищем варианты доставки...</div>";
+        ShopLogisticWidget.injectHtml(container, html);
+        $('textarea[name="725641[address]"]').val(''); // обнулим адрес чтобы случайно не запостили левый адрес
+
         this.injectTarifs(to_city, weight, price, function (tarifs) {
             var html;
             if (tarifs.length > 0) {
@@ -222,7 +227,8 @@ var ShopLogisticWidget = {
         var apiKey = 'c8ce012647c577d9558ab9c7acaa67d8';
         //var apiKey = '577888574a3e4df01867cd5ccc9f18a5'; // testing
         $.ajax({
-            url: 'http://client-shop-logistics.ru/index.php?route=deliveries/api',
+            //url: 'http://client-shop-logistics.ru/index.php?route=deliveries/api', // нет поддержки CORS
+            url: 'https://cors-anywhere.herokuapp.com/http://client-shop-logistics.ru/index.php?route=deliveries/api', // proxy c поддержкой CORS
             //url: 'https://test.client-shop-logistics.ru/index.php?route=deliveries/api', // testing, demo@shop-logistics.ru/demo, в плагине JetBrains IDE Support указать <all_urls>,
             method: 'POST',
             data: 'xml=' + encodeURIComponent(
