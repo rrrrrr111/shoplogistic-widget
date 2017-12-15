@@ -24,23 +24,27 @@ var ShopLogisticWidget = {
             var $newButton = $('a#shoplogistic-calc-button');
             $newButton.on("click", function (e) {
                 e.preventDefault(); // для сохранения прокрутки после вставки HTML
-
-                var newContainer = $('div#shoplogistic-variants-cont');
-                if (newContainer === null || newContainer === undefined) {
-                    console.error('Deliveries newContainer not found');
-                    return;
-                }
-                var widget = ShopLogisticWidget;
-
-                var price = widget.getPrice();
-                var fee = 70;           // дополнительная комиссия добавляемая к сумме доставки
-                var weight = '1';       // вес посылки
-
-                var toCity = widget.getDeliveryRegionAndCity();  // место назначения
-                widget.showWidget(toCity, weight, price, fee, newContainer);
+                ShopLogisticWidget.loadDeliveriesVariantsAndShowWidget(true);
             });
+
+            ShopLogisticWidget.loadDeliveriesVariantsAndShowWidget(false);
         }, interval);
     },
+
+    loadDeliveriesVariantsAndShowWidget: function (showWarn) {
+        var newContainer = $('div#shoplogistic-variants-cont');
+        if (newContainer === null || newContainer === undefined) {
+            console.error('Deliveries newContainer not found');
+            return;
+        }
+        var price = this.getPrice();
+        var fee = 70;           // дополнительная комиссия добавляемая к сумме доставки
+        var weight = '1';       // вес посылки
+
+        var toCity = this.getDeliveryRegionAndCity();  // место назначения
+        this.showWidget(toCity, weight, price, fee, newContainer, showWarn);
+    },
+
     // ценность посылки
     getPrice: function () {
         var summ = parseInt($('div.cart-preview-sum').text());
@@ -92,10 +96,12 @@ var ShopLogisticWidget = {
     },
 
     // показ виджета
-    showWidget: function (to_city, weight, price, fee, container) {
+    showWidget: function (to_city, weight, price, fee, container, showWarn) {
         if (to_city === '') {
-            var html = "<div style='color: #f75e82; font-size: 14px;'>Укажите Ваш регион и город для расчета вариантов доставки</div>";
-            ShopLogisticWidget.injectHtml(container, html);
+            if (showWarn) {
+                var html = "<div style='color: #f75e82; font-size: 14px;'>Укажите Ваш регион и город для расчета вариантов доставки</div>";
+                ShopLogisticWidget.injectHtml(container, html);
+            }
             return
         }
 
@@ -109,7 +115,7 @@ var ShopLogisticWidget = {
                 html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
                 ShopLogisticWidget.injectHtml(container, html);
                 ShopLogisticWidget.bindVariantsSelectionListeners(tarifs, fee);
-            } else {
+            } else if (showWarn) {
                 html = "<div style='color: #f75e82; font-size: 14px;'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
                 ShopLogisticWidget.injectHtml(container, html);
             }
@@ -171,6 +177,7 @@ var ShopLogisticWidget = {
                 (tarif.tarifs_type === '1' ? ' <Укажите здесь Ваш адрес>' : '');
             $('textarea[name="725641[address]"]').val(address);
 
+            $('div#delivery-725641-html').find('div.jq-radio input[type="radio"]').first().attr('checked', true); // выберем первый вариант доставки из старых предложенных
         });
     },
 
