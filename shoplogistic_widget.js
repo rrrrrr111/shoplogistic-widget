@@ -115,9 +115,13 @@ var ShopLogisticWidget = {
                 html = ShopLogisticWidget.prepareTarifsHtml(tarifs, fee);
                 ShopLogisticWidget.injectHtml(container, html);
                 ShopLogisticWidget.bindVariantsSelectionListeners(tarifs, fee);
+
+                ShopLogisticWidget.clearOldDeliveryVariantsSelection();
             } else if (showWarn) {
                 html = "<div style='color: #f75e82; font-size: 14px;'>Варианты доставки не найдены, введите адрес вручную, наш специалист свяжется с Вами.</div>";
                 ShopLogisticWidget.injectHtml(container, html);
+
+                ShopLogisticWidget.selectFirstOldDeliveryVariant();
             }
         });
     },
@@ -176,9 +180,19 @@ var ShopLogisticWidget = {
                 ShopLogisticWidget.getPickUpPlaceAddressAndPhone(tarif) +
                 (tarif.tarifs_type === '1' ? ' <Укажите здесь Ваш адрес>' : '');
             $('textarea[name="725641[address]"]').val(address);
-
-            $('div#delivery-725641-html').find('div.jq-radio input[type="radio"]').first().attr('checked', true); // выберем первый вариант доставки из старых предложенных
+            ShopLogisticWidget.selectFirstOldDeliveryVariant();
         });
+    },
+
+    // выбираем первый из старых чтобы сайт не ругался, что не выбран вариант доставки
+    selectFirstOldDeliveryVariant: function () {
+        ShopLogisticWidget.clearOldDeliveryVariantsSelection();
+        var $oldContainer = $('div#delivery-725641-html');
+        $oldContainer.find('div.jq-radio input[type="radio"]').first().prop('checked', true).parent().addClass('checked focused');
+    },
+
+    clearOldDeliveryVariantsSelection: function () {
+        $('div#delivery-725641-html').find('div.jq-radio input[type="radio"]').removeAttr('checked').parent().removeClass('checked focused');
     },
 
     injectTarifs: function (to_city, weight, price, tarifsCallback) {
